@@ -137,6 +137,30 @@ build CMakeFiles/AlgorithmVisualizaion.dir/Widgets/control_panel.cpp.obj: CXX_CO
   OBJECT_DIR = CMakeFiles\AlgorithmVisualizaion.dir
   OBJECT_FILE_DIR = CMakeFiles\AlgorithmVisualizaion.dir\Widgets
 
+build CMakeFiles/AlgorithmVisualizaion.dir/interpreter/lexer.cpp.obj: CXX_COMPILER__AlgorithmVisualizaion_unscanned_Debug D$:/QtProjects/AlgorithmVisualizaion/interpreter/lexer.cpp || cmake_object_order_depends_target_AlgorithmVisualizaion
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\AlgorithmVisualizaion.dir\interpreter\lexer.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/AlgorithmVisualizaion_autogen/include -isystem D:/Qt/6.9.1/mingw_64/include/QtCore -isystem D:/Qt/6.9.1/mingw_64/include -isystem D:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem D:/Qt/6.9.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\AlgorithmVisualizaion.dir
+  OBJECT_FILE_DIR = CMakeFiles\AlgorithmVisualizaion.dir\interpreter
+
+build CMakeFiles/AlgorithmVisualizaion.dir/interpreter/parser.cpp.obj: CXX_COMPILER__AlgorithmVisualizaion_unscanned_Debug D$:/QtProjects/AlgorithmVisualizaion/interpreter/parser.cpp || cmake_object_order_depends_target_AlgorithmVisualizaion
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\AlgorithmVisualizaion.dir\interpreter\parser.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/AlgorithmVisualizaion_autogen/include -isystem D:/Qt/6.9.1/mingw_64/include/QtCore -isystem D:/Qt/6.9.1/mingw_64/include -isystem D:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem D:/Qt/6.9.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\AlgorithmVisualizaion.dir
+  OBJECT_FILE_DIR = CMakeFiles\AlgorithmVisualizaion.dir\interpreter
+
+build CMakeFiles/AlgorithmVisualizaion.dir/interpreter/interpreter.cpp.obj: CXX_COMPILER__AlgorithmVisualizaion_unscanned_Debug D$:/QtProjects/AlgorithmVisualizaion/interpreter/interpreter.cpp || cmake_object_order_depends_target_AlgorithmVisualizaion
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\AlgorithmVisualizaion.dir\interpreter\interpreter.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/AlgorithmVisualizaion_autogen/include -isystem D:/Qt/6.9.1/mingw_64/include/QtCore -isystem D:/Qt/6.9.1/mingw_64/include -isystem D:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem D:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem D:/Qt/6.9.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\AlgorithmVisualizaion.dir
+  OBJECT_FILE_DIR = CMakeFiles\AlgorithmVisualizaion.dir\interpreter
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target AlgorithmVisualizaion
@@ -145,7 +169,7 @@ build CMakeFiles/AlgorithmVisualizaion.dir/Widgets/control_panel.cpp.obj: CXX_CO
 #############################################
 # Link the executable AlgorithmVisualizaion.exe
 
-build AlgorithmVisualizaion.exe: CXX_EXECUTABLE_LINKER__AlgorithmVisualizaion_Debug CMakeFiles/AlgorithmVisualizaion.dir/AlgorithmVisualizaion_autogen/mocs_compilation.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/main.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/mainwindow.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/step_data.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/algorithm_base.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/algorithm_manager.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/code_highlighter.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/visualization_widget.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/array_visualizer.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/graph_visualizer.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/control_panel.cpp.obj | D$:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a D$:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a D$:/Qt/6.9.1/mingw_64/lib/libQt6Core.a D$:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a || AlgorithmVisualizaion_autogen AlgorithmVisualizaion_autogen_timestamp_deps
+build AlgorithmVisualizaion.exe: CXX_EXECUTABLE_LINKER__AlgorithmVisualizaion_Debug CMakeFiles/AlgorithmVisualizaion.dir/AlgorithmVisualizaion_autogen/mocs_compilation.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/main.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/mainwindow.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/step_data.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/algorithm_base.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/algorithm_manager.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/code_highlighter.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/visualization_widget.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/array_visualizer.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/graph_visualizer.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/Widgets/control_panel.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/interpreter/lexer.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/interpreter/parser.cpp.obj CMakeFiles/AlgorithmVisualizaion.dir/interpreter/interpreter.cpp.obj | D$:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a D$:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a D$:/Qt/6.9.1/mingw_64/lib/libQt6Core.a D$:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a || AlgorithmVisualizaion_autogen AlgorithmVisualizaion_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = D:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a  D:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a  D:/Qt/6.9.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  D:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

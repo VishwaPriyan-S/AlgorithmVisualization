@@ -6,4 +6,5 @@
 #include "WHF3XMZT5M/moc_visualization_widget.cpp"
 #include "EWIEGA46WW/moc_algorithm_base.cpp"
 #include "EWIEGA46WW/moc_algorithm_manager.cpp"
+#include "KR56ZOOAQI/moc_interpreter_algorithm.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"

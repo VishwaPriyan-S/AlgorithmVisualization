@@ -31,6 +31,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Widgets/array_visualizer.h Widgets/array_visualizer.cpp
         Widgets/graph_visualizer.h Widgets/graph_visualizer.cpp
         Widgets/control_panel.h Widgets/control_panel.cpp
+        interpreter/lexer.h
+        interpreter/vis_event.h
+        interpreter/lexer.cpp
+        interpreter/ast.h
+        interpreter/parser.h
+        interpreter/parser.cpp
+        interpreter/interpreter.h
+        interpreter/interpreter.cpp
+        interpreter/interpreter_algorithm.h
 
 
 
