@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.16)
+project(lua C)
+
+# 1. Get all C files from the src folder
+file(GLOB LUA_SOURCES "src/*.c")
+
+# 2. Exclude the command-line tools (we only want the library)
+#    (These files contain "main" functions which would confuse your app)
+list(REMOVE_ITEM LUA_SOURCES 
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/lua.c" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/luac.c"
+)
+
+# 3. Create the library target named "lua"
+add_library(lua STATIC ${LUA_SOURCES})
+
+# 4. Automatically share the include path with anyone who links this
+target_include_directories(lua PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src")

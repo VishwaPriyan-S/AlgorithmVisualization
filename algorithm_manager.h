@@ -31,6 +31,9 @@ public:
     QString getAlgorithmComplexity(const QString& name) const;
     QString getCurrentAlgorithmSourceCode() const;
 
+    void setCustomAlgorithm(AlgorithmBase* algo);
+
+
     // Execution Control
     void executeAlgorithm(const QVector<int>& input);
     void play();
@@ -67,6 +70,8 @@ private:
     int calculateStepDelay() const;
     void connectAlgorithmSignals(AlgorithmBase* algorithm);
     void disconnectAlgorithmSignals(AlgorithmBase* algorithm);
+
+
 
     std::map<QString, std::unique_ptr<AlgorithmBase>> m_algorithms;
     AlgorithmBase* m_currentAlgorithm;

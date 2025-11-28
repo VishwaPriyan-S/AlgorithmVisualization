@@ -387,6 +387,12 @@
 			null
 		],
 		[
+			"D:/QtProjects/AlgorithmVisualizaion/interpreter/LuaParserEngine.h",
+			"MU",
+			"KR56ZOOAQI/moc_LuaParserEngine.cpp",
+			null
+		],
+		[
 			"D:/QtProjects/AlgorithmVisualizaion/interpreter/ast.h",
 			"MU",
 			"KR56ZOOAQI/moc_ast.cpp",
@@ -461,6 +467,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src",
 		"D:/Qt/6.9.1/mingw_64/include/QtCore",
 		"D:/Qt/6.9.1/mingw_64/include",
 		"D:/Qt/6.9.1/mingw_64/mkspecs/win32-g++",
@@ -534,6 +541,11 @@
 		[ "D:/QtProjects/AlgorithmVisualizaion/algorithm_base.cpp", "MU", null ],
 		[
 			"D:/QtProjects/AlgorithmVisualizaion/algorithm_manager.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/interpreter/LuaParserEngine.cpp",
 			"MU",
 			null
 		],

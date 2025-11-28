@@ -7,3 +7,12 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CM
 D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
 D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/AlgorithmVisualizaion_autogen_timestamp_deps.dir
 D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/AlgorithmVisualizaion_autogen.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/lua.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/edit_cache.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/rebuild_cache.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/list_install_components.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/install.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/install/local.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/install/strip.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/lua_autogen_timestamp_deps.dir
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/lua_autogen.dir

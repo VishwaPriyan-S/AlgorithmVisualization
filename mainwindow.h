@@ -74,6 +74,8 @@ private:
     void updateVisualization();
     void updateStatusBar();
     void updateControlPanelState();
+    void onParseCustomCodeClicked();
+
 
     QWidget* createLeftPanel();
     QWidget* createRightPanel();

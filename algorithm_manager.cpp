@@ -1,6 +1,5 @@
 #include "algorithm_manager.h"
 #include <QDebug>
-#include <algorithm>
 
 const int AlgorithmManager::MIN_STEP_DELAY;
 const int AlgorithmManager::MAX_STEP_DELAY;
@@ -249,3 +248,19 @@ void AlgorithmManager::disconnectAlgorithmSignals(AlgorithmBase* algorithm)
         disconnect(algorithm, nullptr, this, nullptr);
     }
 }
+
+void AlgorithmManager::setCustomAlgorithm(AlgorithmBase* algo)
+{
+    QString customName = "Custom Code";
+
+    // Remove previous custom algorithm entry
+    m_algorithms.erase(customName);
+
+    // Store new algorithm in the map
+    m_algorithms.insert_or_assign(customName, std::unique_ptr<AlgorithmBase>(algo));
+
+    // Set the new one as current
+    setCurrentAlgorithm(customName);
+}
+
+

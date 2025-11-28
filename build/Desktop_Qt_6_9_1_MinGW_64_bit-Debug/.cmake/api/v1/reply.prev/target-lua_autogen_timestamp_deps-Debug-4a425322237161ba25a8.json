@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"thirdparty/lua/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "lua_autogen_timestamp_deps::@78a79558d7c1e13123cd",
+	"isGeneratorProvided" : true,
+	"name" : "lua_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "thirdparty/lua",
+		"source" : "thirdparty/lua"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

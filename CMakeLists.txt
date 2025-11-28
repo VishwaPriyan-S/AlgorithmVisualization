@@ -12,6 +12,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+# -------------------------------------------------------------------------
+# 1. BUILD LUA FROM SOURCE
+# This runs the CMake file you created in Step 1 inside thirdparty/lua
+# -------------------------------------------------------------------------
+add_subdirectory(thirdparty/lua)
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -40,23 +46,14 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         interpreter/interpreter.h
         interpreter/interpreter.cpp
         interpreter/interpreter_algorithm.h
-
-
-
-
-
+        interpreter/LuaParserEngine.h
+        interpreter/LuaParserEngine.cpp
     )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET AlgorithmVisualizaion APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
         add_library(AlgorithmVisualizaion SHARED
             ${PROJECT_SOURCES}
         )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(AlgorithmVisualizaion
             ${PROJECT_SOURCES}
@@ -64,14 +61,21 @@ else()
     endif()
 endif()
 
-target_link_libraries(AlgorithmVisualizaion PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+# -------------------------------------------------------------------------
+# 2. LINK LUA
+# We link the target "lua" defined in the subdirectory.
+# Note: We do NOT need target_include_directories, it is handled automatically.
+# -------------------------------------------------------------------------
+target_link_libraries(AlgorithmVisualizaion PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    lua
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
 if(${QT_VERSION} VERSION_LESS 6.1.0)
   set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.AlgorithmVisualizaion)
 endif()
+
 set_target_properties(AlgorithmVisualizaion PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}

@@ -1,0 +1,139 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-6270ca04f81369b1e8ae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "thirdparty/lua",
+					"jsonFile" : "directory-thirdparty.lua-Debug-e7fc375704d523ee5fea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "thirdparty/lua",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AlgorithmVisualizaion",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "lua",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AlgorithmVisualizaion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AlgorithmVisualizaion-Debug-8994653f402873ec161f.json",
+					"name" : "AlgorithmVisualizaion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AlgorithmVisualizaion_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AlgorithmVisualizaion_autogen-Debug-ec2be4b4f7a93835ef03.json",
+					"name" : "AlgorithmVisualizaion_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AlgorithmVisualizaion_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AlgorithmVisualizaion_autogen_timestamp_deps-Debug-866ba6c9e9ab99f39060.json",
+					"name" : "AlgorithmVisualizaion_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lua::@78a79558d7c1e13123cd",
+					"jsonFile" : "target-lua-Debug-0e66d21526fe3d209b8c.json",
+					"name" : "lua",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lua_autogen::@78a79558d7c1e13123cd",
+					"jsonFile" : "target-lua_autogen-Debug-ca903fe0969c4834e05d.json",
+					"name" : "lua_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lua_autogen_timestamp_deps::@78a79558d7c1e13123cd",
+					"jsonFile" : "target-lua_autogen_timestamp_deps-Debug-4a425322237161ba25a8.json",
+					"name" : "lua_autogen_timestamp_deps",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+		"source" : "D:/QtProjects/AlgorithmVisualizaion"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

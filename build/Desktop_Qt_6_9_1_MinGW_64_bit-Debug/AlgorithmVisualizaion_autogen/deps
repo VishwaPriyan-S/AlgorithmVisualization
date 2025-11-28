@@ -692,6 +692,8 @@ AlgorithmVisualizaion_autogen/timestamp: \
 	D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
+	D:/QtProjects/AlgorithmVisualizaion/interpreter/LuaParserEngine.cpp \
+	D:/QtProjects/AlgorithmVisualizaion/interpreter/LuaParserEngine.h \
 	D:/QtProjects/AlgorithmVisualizaion/interpreter/ast.h \
 	D:/QtProjects/AlgorithmVisualizaion/interpreter/interpreter.cpp \
 	D:/QtProjects/AlgorithmVisualizaion/interpreter/interpreter.h \

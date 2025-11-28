@@ -21,7 +21,8 @@
 #include "Widgets/control_panel.h"
 #include "Widgets/visualization_widget.h"
 #include "algorithm_manager.h"
-#include "buuble_sort.h"
+#include "interpreter/interpreter_algorithm.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -116,7 +117,7 @@ QWidget* MainWindow::createLeftPanel()
     QGroupBox* codeGroup = new QGroupBox("Algorithm Code");
     QVBoxLayout* codeLayout = new QVBoxLayout(codeGroup);
     m_codeEditor = new QTextEdit();
-    m_codeEditor->setReadOnly(true);
+    m_codeEditor->setReadOnly(false);
     m_codeEditor->setFont(QFont("Consolas", 10));
     m_codeHighlighter = new CodeHighlighter(m_codeEditor->document());
     codeLayout->addWidget(m_codeEditor);
@@ -216,6 +217,8 @@ void MainWindow::setupMenuBar()
 void MainWindow::setupToolBar()
 {
     QToolBar* toolBar = addToolBar("Main Toolbar");
+    QAction* parseCodeAction = toolBar->addAction("Parse & Load Code"); //PARSING
+    connect(parseCodeAction, &QAction::triggered, this, &MainWindow::onParseCustomCodeClicked);
     toolBar->setMovable(false);
     toolBar->addAction(m_newDataAction);
     toolBar->addAction(m_loadDataAction);
@@ -295,10 +298,13 @@ void MainWindow::onExecuteClicked()
         QMessageBox::warning(this, "Input Error", "Please provide valid input data.");
         return;
     }
+
     m_algorithmManager->executeAlgorithm(input);
+
     m_hasExecutedAlgorithm = true;
     updateControlPanelState();
 }
+
 
 void MainWindow::onGenerateDataClicked() { generateRandomData(); }
 void MainWindow::onPlayClicked() { m_algorithmManager->play(); }
@@ -482,3 +488,21 @@ void MainWindow::closeEvent(QCloseEvent *event)
     settings.setValue("windowState", saveState());
     event->accept();
 }
+void MainWindow::onParseCustomCodeClicked()
+{
+    QString userCode = m_codeEditor->toPlainText();
+    if (userCode.trimmed().isEmpty()) {
+        QMessageBox::warning(this, "Empty Code", "Paste algorithm code first.");
+        return;
+    }
+
+    AlgorithmBase* algo = new InterpreterAlgorithm(userCode, this);
+    m_algorithmManager->setCustomAlgorithm(algo);
+
+    m_algorithmSelector->addItem("Custom Code");
+    m_algorithmSelector->setCurrentIndex(m_algorithmSelector->count() - 1);
+
+    QMessageBox::information(this, "Success", "Custom algorithm loaded.");
+}
+
+

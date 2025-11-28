@@ -1,0 +1,370 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/lua_autogen",
+	"CMAKE_BINARY_DIR" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua",
+	"CMAKE_EXECUTABLE" : "D:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/CMakeLists.txt",
+		"D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCInformation.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/QtProjects/AlgorithmVisualizaion",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/lua_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "lua_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lapi.h",
+			"MU",
+			"UVLADIE3JM/moc_lapi.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lauxlib.h",
+			"MU",
+			"UVLADIE3JM/moc_lauxlib.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lcode.h",
+			"MU",
+			"UVLADIE3JM/moc_lcode.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lctype.h",
+			"MU",
+			"UVLADIE3JM/moc_lctype.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ldebug.h",
+			"MU",
+			"UVLADIE3JM/moc_ldebug.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ldo.h",
+			"MU",
+			"UVLADIE3JM/moc_ldo.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lfunc.h",
+			"MU",
+			"UVLADIE3JM/moc_lfunc.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lgc.h",
+			"MU",
+			"UVLADIE3JM/moc_lgc.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/llex.h",
+			"MU",
+			"UVLADIE3JM/moc_llex.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lmem.h",
+			"MU",
+			"UVLADIE3JM/moc_lmem.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lobject.h",
+			"MU",
+			"UVLADIE3JM/moc_lobject.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lopcodes.h",
+			"MU",
+			"UVLADIE3JM/moc_lopcodes.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lparser.h",
+			"MU",
+			"UVLADIE3JM/moc_lparser.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lstate.h",
+			"MU",
+			"UVLADIE3JM/moc_lstate.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lstring.h",
+			"MU",
+			"UVLADIE3JM/moc_lstring.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ltable.h",
+			"MU",
+			"UVLADIE3JM/moc_ltable.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ltm.h",
+			"MU",
+			"UVLADIE3JM/moc_ltm.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lundump.h",
+			"MU",
+			"UVLADIE3JM/moc_lundump.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lvm.h",
+			"MU",
+			"UVLADIE3JM/moc_lvm.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lzio.h",
+			"MU",
+			"UVLADIE3JM/moc_lzio.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/lua_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/lua_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/lua_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 12,
+	"PARSE_CACHE_FILE" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/lua_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Qt/6.9.1/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Qt/6.9.1/mingw_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/thirdparty/lua/CMakeFiles/lua_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lapi.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lauxlib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lbaselib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lcode.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lcorolib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lctype.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ldblib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ldebug.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ldo.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ldump.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lfunc.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lgc.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/linit.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/liolib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/llex.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lmathlib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lmem.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/loadlib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lobject.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lopcodes.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/loslib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lparser.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lstate.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lstring.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lstrlib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ltable.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ltablib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/ltm.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lundump.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lutf8lib.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lvm.c",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src/lzio.c",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}
