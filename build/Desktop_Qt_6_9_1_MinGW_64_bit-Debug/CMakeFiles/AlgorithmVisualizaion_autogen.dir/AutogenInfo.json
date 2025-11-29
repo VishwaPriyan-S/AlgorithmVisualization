@@ -345,12 +345,6 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/QtProjects/AlgorithmVisualizaion/Widgets/array_visualizer.h",
-			"MU",
-			"WHF3XMZT5M/moc_array_visualizer.cpp",
-			null
-		],
-		[
 			"D:/QtProjects/AlgorithmVisualizaion/Widgets/code_highlighter.h",
 			"MU",
 			"WHF3XMZT5M/moc_code_highlighter.cpp",
@@ -363,81 +357,15 @@
 			null
 		],
 		[
-			"D:/QtProjects/AlgorithmVisualizaion/Widgets/graph_visualizer.h",
+			"D:/QtProjects/AlgorithmVisualizaion/interpreter/PythonParserEngine.h",
 			"MU",
-			"WHF3XMZT5M/moc_graph_visualizer.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/Widgets/visualization_widget.h",
-			"MU",
-			"WHF3XMZT5M/moc_visualization_widget.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/algorithm_base.h",
-			"MU",
-			"EWIEGA46WW/moc_algorithm_base.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/algorithm_manager.h",
-			"MU",
-			"EWIEGA46WW/moc_algorithm_manager.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/LuaParserEngine.h",
-			"MU",
-			"KR56ZOOAQI/moc_LuaParserEngine.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/ast.h",
-			"MU",
-			"KR56ZOOAQI/moc_ast.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/interpreter.h",
-			"MU",
-			"KR56ZOOAQI/moc_interpreter.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/interpreter_algorithm.h",
-			"MU",
-			"KR56ZOOAQI/moc_interpreter_algorithm.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/lexer.h",
-			"MU",
-			"KR56ZOOAQI/moc_lexer.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/parser.h",
-			"MU",
-			"KR56ZOOAQI/moc_parser.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/vis_event.h",
-			"MU",
-			"KR56ZOOAQI/moc_vis_event.cpp",
+			"KR56ZOOAQI/moc_PythonParserEngine.cpp",
 			null
 		],
 		[
 			"D:/QtProjects/AlgorithmVisualizaion/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/step_data.h",
-			"MU",
-			"EWIEGA46WW/moc_step_data.cpp",
 			null
 		]
 	],
@@ -467,7 +395,6 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"D:/QtProjects/AlgorithmVisualizaion/thirdparty/lua/src",
 		"D:/Qt/6.9.1/mingw_64/include/QtCore",
 		"D:/Qt/6.9.1/mingw_64/include",
 		"D:/Qt/6.9.1/mingw_64/mkspecs/win32-g++",
@@ -514,11 +441,6 @@
 	"SOURCES" : 
 	[
 		[
-			"D:/QtProjects/AlgorithmVisualizaion/Widgets/array_visualizer.cpp",
-			"MU",
-			null
-		],
-		[
 			"D:/QtProjects/AlgorithmVisualizaion/Widgets/code_highlighter.cpp",
 			"MU",
 			null
@@ -529,44 +451,12 @@
 			null
 		],
 		[
-			"D:/QtProjects/AlgorithmVisualizaion/Widgets/graph_visualizer.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/Widgets/visualization_widget.cpp",
-			"MU",
-			null
-		],
-		[ "D:/QtProjects/AlgorithmVisualizaion/algorithm_base.cpp", "MU", null ],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/algorithm_manager.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/LuaParserEngine.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/interpreter.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/lexer.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/QtProjects/AlgorithmVisualizaion/interpreter/parser.cpp",
+			"D:/QtProjects/AlgorithmVisualizaion/interpreter/PythonParserEngine.cpp",
 			"MU",
 			null
 		],
 		[ "D:/QtProjects/AlgorithmVisualizaion/main.cpp", "MU", null ],
-		[ "D:/QtProjects/AlgorithmVisualizaion/mainwindow.cpp", "MU", null ],
-		[ "D:/QtProjects/AlgorithmVisualizaion/step_data.cpp", "MU", null ]
+		[ "D:/QtProjects/AlgorithmVisualizaion/mainwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
