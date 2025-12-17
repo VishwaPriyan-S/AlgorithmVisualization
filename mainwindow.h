@@ -4,82 +4,53 @@
 #include <QMainWindow>
 #include <QSplitter>
 #include <QTextEdit>
-#include <QComboBox>
 #include <QLabel>
-#include <QSpinBox>
-#include <QProgressBar>
-#include <QPushButton>
-#include <QVBoxLayout>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QTimer>
 
+// Include your custom visualizer header
+#include "ASTVisualizer.h"
+
+// Forward declaration for the highlighter
 class CodeHighlighter;
-class ControlPanel;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private:
-    // UI
-    QSplitter* m_mainSplitter;
-    QTextEdit* m_codeEditor;
-    CodeHighlighter* m_codeHighlighter;
-
-    QComboBox* m_algorithmSelector;
-    QLabel* m_algorithmDescriptionLabel;
-    QLabel* m_complexityLabel;
-
-    QTextEdit* m_dataInputEdit;
-    QSpinBox* m_arraySizeSpinBox;
-    QPushButton* m_generateDataButton;
-    QPushButton* m_executeButton;
-    QTextEdit* m_jsonOutputView;
-
-    QWidget* m_visualizationPlaceholder;     // NEW
-
-    ControlPanel* m_controlPanel;
-
-    QLabel* m_statusLabel;
-    QProgressBar* m_statusProgressBar;
-
-    bool m_hasExecutedAlgorithm;
-    bool m_showStatistics;
-    bool m_showOperationInfo;
-    bool m_enableAnimations;
-
-    int m_defaultArraySize;
-    int m_maxArraySize;
+private slots:
+    // Only declare slots that are actually implemented in mainwindow.cpp
+    void onExecuteClicked();
+    void onStepExecuted(int step, int total);
+    void onExecutionFinished();
 
 private:
+    // UI Setup helper functions
     void setupUI();
+    QWidget* createLeftPanel();
+    QWidget* createRightPanel();
     void setupMenuBar();
     void setupToolBar();
     void setupStatusBar();
     void setupConnections();
 
-    QWidget* createLeftPanel();
-    QWidget* createRightPanel();
-    QWidget* createDataInputPanel();
-    QWidget* createAlgorithmInfoPanel();
+    // UI Components
+    QSplitter* m_mainSplitter;
+    QTextEdit* m_codeEditor;
+    QTextEdit* m_jsonOutputView;
+    QGraphicsScene* m_scene;
+    QGraphicsView* m_graphicsView;
+    QLabel* m_statusLabel;
 
-    void setUIEnabled(bool enabled);
-    void updateStatusBar();
-
-    QVector<int> getCurrentInputData() const;
-    void setInputData(const QVector<int>& data);
-    QString dataToString(const QVector<int>& data) const;
-
-private slots:
-    void onAlgorithmChanged(int index);
-    void onExecuteClicked();
-    void onGenerateDataClicked();
-    void onParseCustomCodeClicked();
-    void onDataInputChanged();
-    void onArraySizeChanged(int size);
-    void onAbout();
+    // Logic Components
+    ASTVisualizer* m_visualizer;
+    QTimer* m_playTimer;
+    CodeHighlighter* m_codeHighlighter;
 };
 
 #endif // MAINWINDOW_H

@@ -40,37 +40,23 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "MainWindow",
-        "onAlgorithmChanged",
-        "",
-        "index",
         "onExecuteClicked",
-        "onGenerateDataClicked",
-        "onParseCustomCodeClicked",
-        "onDataInputChanged",
-        "onArraySizeChanged",
-        "size",
-        "onAbout"
+        "",
+        "onStepExecuted",
+        "step",
+        "total",
+        "onExecutionFinished"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'onAlgorithmChanged'
-        QtMocHelpers::SlotData<void(int)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 3 },
-        }}),
         // Slot 'onExecuteClicked'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onGenerateDataClicked'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onParseCustomCodeClicked'
-        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onDataInputChanged'
-        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onArraySizeChanged'
-        QtMocHelpers::SlotData<void(int)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 9 },
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onStepExecuted'
+        QtMocHelpers::SlotData<void(int, int)>(3, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 4 }, { QMetaType::Int, 5 },
         }}),
-        // Slot 'onAbout'
-        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onExecutionFinished'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -94,13 +80,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<MainWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->onAlgorithmChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 1: _t->onExecuteClicked(); break;
-        case 2: _t->onGenerateDataClicked(); break;
-        case 3: _t->onParseCustomCodeClicked(); break;
-        case 4: _t->onDataInputChanged(); break;
-        case 5: _t->onArraySizeChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 6: _t->onAbout(); break;
+        case 0: _t->onExecuteClicked(); break;
+        case 1: _t->onStepExecuted((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 2: _t->onExecutionFinished(); break;
         default: ;
         }
     }
@@ -125,14 +107,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 3;
     }
     return _id;
 }

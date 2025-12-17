@@ -37,6 +37,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(AlgorithmVisualizaion
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ASTVisualizer.h
+        ASTVisualizer.cpp
     )
 else()
     if(ANDROID)

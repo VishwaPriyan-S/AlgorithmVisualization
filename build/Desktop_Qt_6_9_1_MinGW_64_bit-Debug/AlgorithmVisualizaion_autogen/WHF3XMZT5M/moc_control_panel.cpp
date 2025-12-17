@@ -42,13 +42,13 @@ template <> constexpr inline auto ControlPanel::qt_create_metaobjectdata<qt_meta
         "ControlPanel",
         "playClicked",
         "",
-        "pauseClicked",
-        "stopClicked",
+        "stepClicked",
         "resetClicked",
-        "stepForwardClicked",
-        "stepBackwardClicked",
         "speedChanged",
         "speed",
+        "pauseClicked",
+        "stopClicked",
+        "stepBackwardClicked",
         "goToStepClicked",
         "step",
         "goToBeginningClicked",
@@ -60,26 +60,27 @@ template <> constexpr inline auto ControlPanel::qt_create_metaobjectdata<qt_meta
         "onPlayPauseClicked",
         "onSpeedSliderChanged",
         "value",
-        "onStepSpinBoxChanged"
+        "onStepSpinBoxChanged",
+        "onStepForwardClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'playClicked'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'pauseClicked'
+        // Signal 'stepClicked'
         QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'stopClicked'
-        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'resetClicked'
-        QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'stepForwardClicked'
-        QtMocHelpers::SignalData<void()>(6, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'stepBackwardClicked'
-        QtMocHelpers::SignalData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'speedChanged'
-        QtMocHelpers::SignalData<void(int)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 9 },
+        QtMocHelpers::SignalData<void(int)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 6 },
         }}),
+        // Signal 'pauseClicked'
+        QtMocHelpers::SignalData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'stopClicked'
+        QtMocHelpers::SignalData<void()>(8, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'stepBackwardClicked'
+        QtMocHelpers::SignalData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'goToStepClicked'
         QtMocHelpers::SignalData<void(int)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 11 },
@@ -106,6 +107,8 @@ template <> constexpr inline auto ControlPanel::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::SlotData<void(int)>(21, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 20 },
         }}),
+        // Slot 'onStepForwardClicked'
+        QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -130,12 +133,12 @@ void ControlPanel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->playClicked(); break;
-        case 1: _t->pauseClicked(); break;
-        case 2: _t->stopClicked(); break;
-        case 3: _t->resetClicked(); break;
-        case 4: _t->stepForwardClicked(); break;
-        case 5: _t->stepBackwardClicked(); break;
-        case 6: _t->speedChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->stepClicked(); break;
+        case 2: _t->resetClicked(); break;
+        case 3: _t->speedChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 4: _t->pauseClicked(); break;
+        case 5: _t->stopClicked(); break;
+        case 6: _t->stepBackwardClicked(); break;
         case 7: _t->goToStepClicked((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 8: _t->goToBeginningClicked(); break;
         case 9: _t->goToEndClicked(); break;
@@ -144,23 +147,24 @@ void ControlPanel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 12: _t->onPlayPauseClicked(); break;
         case 13: _t->onSpeedSliderChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 14: _t->onStepSpinBoxChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 15: _t->onStepForwardClicked(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::playClicked, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::pauseClicked, 1))
+        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::stepClicked, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::stopClicked, 2))
+        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::resetClicked, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::resetClicked, 3))
+        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)(int )>(_a, &ControlPanel::speedChanged, 3))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::stepForwardClicked, 4))
+        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::pauseClicked, 4))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::stepBackwardClicked, 5))
+        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::stopClicked, 5))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)(int )>(_a, &ControlPanel::speedChanged, 6))
+        if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)()>(_a, &ControlPanel::stepBackwardClicked, 6))
             return;
         if (QtMocHelpers::indexOfMethod<void (ControlPanel::*)(int )>(_a, &ControlPanel::goToStepClicked, 7))
             return;
@@ -190,14 +194,14 @@ int ControlPanel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 16;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 16)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 15;
+        _id -= 16;
     }
     return _id;
 }
@@ -209,39 +213,39 @@ void ControlPanel::playClicked()
 }
 
 // SIGNAL 1
-void ControlPanel::pauseClicked()
+void ControlPanel::stepClicked()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 
 // SIGNAL 2
-void ControlPanel::stopClicked()
+void ControlPanel::resetClicked()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 
 // SIGNAL 3
-void ControlPanel::resetClicked()
+void ControlPanel::speedChanged(int _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
 }
 
 // SIGNAL 4
-void ControlPanel::stepForwardClicked()
+void ControlPanel::pauseClicked()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 
 // SIGNAL 5
-void ControlPanel::stepBackwardClicked()
+void ControlPanel::stopClicked()
 {
     QMetaObject::activate(this, &staticMetaObject, 5, nullptr);
 }
 
 // SIGNAL 6
-void ControlPanel::speedChanged(int _t1)
+void ControlPanel::stepBackwardClicked()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
 }
 
 // SIGNAL 7

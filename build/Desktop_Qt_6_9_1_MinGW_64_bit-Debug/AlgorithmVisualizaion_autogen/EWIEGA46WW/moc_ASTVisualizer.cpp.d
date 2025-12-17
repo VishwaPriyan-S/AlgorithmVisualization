@@ -1,4 +1,4 @@
-D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/AlgorithmVisualizaion_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/QtProjects/AlgorithmVisualizaion/mainwindow.h \
+D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/AlgorithmVisualizaion_autogen/EWIEGA46WW/moc_ASTVisualizer.cpp: D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h \
   D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/AlgorithmVisualizaion_autogen/moc_predefs.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QJsonArray \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QJsonObject \
@@ -6,7 +6,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QPropertyAnimation \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QSequentialAnimationGroup \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/QTimer \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QVariant \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QVector \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
@@ -17,7 +16,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/q20utility.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q23utility.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qabstractanimation.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qanimationgroup.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qanystringview.h \
@@ -28,7 +26,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/qatomic.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qatomic_cxx11.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qbasicatomic.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qbasictimer.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qbindingstorage.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qbytearray.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
@@ -51,12 +48,9 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/qdarwinhelpers.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qdatastream.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qeasingcurve.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qendian.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qeventloop.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qexceptionhandling.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qflags.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qfloat16.h \
@@ -68,7 +62,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/qglobalstatic.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qhash.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qhashfunctions.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qiodevice.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qiodevicebase.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qiterator.h \
@@ -140,7 +133,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qtextstream.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qtformat_impl.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qtimer.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qtmetamacros.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qtnoop.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
@@ -161,34 +153,19 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/qversiontagging.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qyieldcpu.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qaction.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qcolor.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qcursor.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qfont.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qfontinfo.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qfontmetrics.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qfontvariableaxis.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qicon.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qimage.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qkeysequence.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qpaintdevice.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qpainter.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qpainterpath.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qpalette.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qpen.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qpicture.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qpixelformat.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qpixmap.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qpolygon.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qrgba64.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qtextcursor.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qtextdocument.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qtextformat.h \
-  D:/Qt/6.9.1/mingw_64/include/QtGui/qtextoption.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qtgui-config.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qtguiexports.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qtguiglobal.h \
@@ -198,27 +175,11 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsRectItem \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsScene \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsTextItem \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsView \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QSplitter \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QTextEdit \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qframe.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qgraphicsview.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qlabel.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qscrollarea.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qsizepolicy.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qsplitter.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtextedit.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qwidget.h \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
   D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
@@ -429,5 +390,4 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h
+  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h

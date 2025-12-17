@@ -17,6 +17,13 @@ class ControlPanel : public QWidget
 public:
     explicit ControlPanel(QWidget *parent = nullptr);
 
+    // --- Methods expected by MainWindow ---
+    void setPlayingState(bool isPlaying);
+    void updateStepCounter(int currentStep, int totalSteps);
+    int getSpeed() const;
+    void setSpeed(int speed);
+    // --------------------------------------
+
     // Control states
     void setPlayEnabled(bool enabled);
     void setPauseEnabled(bool enabled);
@@ -25,30 +32,24 @@ public:
 
     // Progress
     void setProgress(int current, int total);
-    void setCurrentStep(int step) { m_currentStep = step; updateProgressDisplay(); }
-    void setTotalSteps(int total) { m_totalSteps = total; updateProgressDisplay(); }
-
-    // Speed control
-    int getSpeed() const;
-    void setSpeed(int speed);
-
-    void setPlaybackState(bool isPlaying) {
-        playButton->setEnabled(!isPlaying);
-        pauseButton->setEnabled(isPlaying);
-    }
+    void setCurrentStep(int step);
+    void setTotalSteps(int total);
 
 public slots:
     void onAlgorithmChanged(bool hasAlgorithm);
     void onExecutionStateChanged(bool isRunning);
 
 signals:
+    // --- Signals expected by MainWindow ---
     void playClicked();
+    void stepClicked(); // Maps to step forward
+    void resetClicked();
+    void speedChanged(int speed);
+    // --------------------------------------
+
     void pauseClicked();
     void stopClicked();
-    void resetClicked();
-    void stepForwardClicked();
     void stepBackwardClicked();
-    void speedChanged(int speed);
     void goToStepClicked(int step);
     void goToBeginningClicked();
     void goToEndClicked();
@@ -57,6 +58,7 @@ private slots:
     void onPlayPauseClicked();
     void onSpeedSliderChanged(int value);
     void onStepSpinBoxChanged(int value);
+    void onStepForwardClicked(); // Internal handler
 
 private:
     void setupUI();
@@ -93,10 +95,6 @@ private:
     int m_currentStep;
     int m_totalSteps;
     int m_currentSpeed;
-
-    QPushButton *playButton;
-    QPushButton *pauseButton;
-
 };
 
-#endif
+#endif // CONTROL_PANEL_H

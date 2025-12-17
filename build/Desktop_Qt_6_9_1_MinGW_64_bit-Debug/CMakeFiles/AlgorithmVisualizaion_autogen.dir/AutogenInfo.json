@@ -345,6 +345,12 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h",
+			"MU",
+			"EWIEGA46WW/moc_ASTVisualizer.cpp",
+			null
+		],
+		[
 			"D:/QtProjects/AlgorithmVisualizaion/Widgets/code_highlighter.h",
 			"MU",
 			"WHF3XMZT5M/moc_code_highlighter.cpp",
@@ -440,6 +446,7 @@
 	"SETTINGS_FILE" : "D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/AlgorithmVisualizaion_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.cpp", "MU", null ],
 		[
 			"D:/QtProjects/AlgorithmVisualizaion/Widgets/code_highlighter.cpp",
 			"MU",
