@@ -8,121 +8,117 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
 #include <QPropertyAnimation>
-#include <QSequentialAnimationGroup>
 #include <QMap>
 #include <QVector>
-#include <QVariant>
 
-// ==================== VariableItem ====================
+// ==================== Enums ====================
+enum class VisualizationMode {
+    Generic,    // Boxes
+    Sorting,    // Bar Chart
+    Recursion,   // Call Stack Focus
+    Graph       //for Graphs
+};
 
-class VariableItem : public QObject, public QGraphicsRectItem {
-    Q_OBJECT
-    Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity)
-
+// ==================== ArrayItem ====================
+class ArrayItem : public QGraphicsItem {
 public:
-    VariableItem(const QString& name,
-                 const QVariant& value,
-                 QGraphicsItem* parent = nullptr);
+    ArrayItem(const QString& name, QGraphicsItem* parent = nullptr);
 
-    void updateValue(const QVariant& value);
-    QString getName() const { return m_name; }
+    void setMode(VisualizationMode mode);
+    void updateData(const QVector<int>& values); // Re-syncs entire array
+
+    QRectF boundingRect() const override;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
 
 private:
+    void updateLayout();
+
     QString m_name;
+    QVector<int> m_values;
+    QVector<QGraphicsRectItem*> m_visualElements;
+    QVector<QGraphicsTextItem*> m_textElements;
+    QGraphicsTextItem* m_nameText;
+    VisualizationMode m_mode;
+};
+
+// ==================== VariableItem ====================
+class VariableItem : public QGraphicsRectItem {
+public:
+    VariableItem(const QString& name, QGraphicsItem* parent = nullptr);
+    void updateValue(const QString& value);
+
+private:
     QGraphicsTextItem* m_nameText;
     QGraphicsTextItem* m_valueText;
 };
 
-// ==================== ArrayItem ====================
-
-class ArrayItem : public QGraphicsItem {
+// ==================== CallStackItem ====================
+class CallStackItem : public QGraphicsRectItem {
 public:
-    ArrayItem(const QString& name,
-              const QVector<int>& values,
-              QGraphicsItem* parent = nullptr);
+    CallStackItem(const QString& funcName, int depth, QGraphicsItem* parent = nullptr);
+};
 
-    void updateElement(int index, int value);
-    void highlightElement(int index, const QColor& color);
-    void clearHighlights();
+// ====================GraphItem========================
+class GraphItem : public QGraphicsItem {
+public:
+    GraphItem(const QString& name, QGraphicsItem* parent = nullptr);
+    void updateData(const QJsonObject& adjList); // Expects { "0": [1, 2], ... }
 
     QRectF boundingRect() const override;
-    void paint(QPainter* painter,
-               const QStyleOptionGraphicsItem* option,
-               QWidget* widget) override;
-
-    QGraphicsRectItem* getElementRect(int index);
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
 
 private:
     QString m_name;
-    QVector<QGraphicsRectItem*> m_elements;
-    QVector<QGraphicsTextItem*> m_valueTexts;
-    QVector<QGraphicsTextItem*> m_indexTexts;
     QGraphicsTextItem* m_nameText;
+
+    // Structure to hold visual parts of a node
+    struct VisualNode {
+        QGraphicsEllipseItem* circle;
+        QGraphicsTextItem* label;
+        QPointF pos;
+    };
+
+    QMap<QString, VisualNode> m_nodes;
+    QVector<QGraphicsLineItem*> m_edges;
 };
-
-// ==================== ASTVisualizer (Step Player) ====================
-
+// ==================== ASTVisualizer ====================
 class ASTVisualizer : public QObject {
     Q_OBJECT
 
 public:
-    explicit ASTVisualizer(QGraphicsScene* scene,
-                           QObject* parent = nullptr);
+    explicit ASTVisualizer(QGraphicsScene* scene, QObject* parent = nullptr);
 
-    // Load execution steps from Python
-    bool loadExecutionSteps(const QJsonArray& steps);
-
-    // Execution control
-    void reset();
+    void loadSteps(const QJsonArray& steps);
     void executeStep();
-
-    // Step info
-    int getCurrentStep() const { return m_currentStep; }
-    int getTotalSteps() const { return m_steps.size(); }
+    void setMode(VisualizationMode mode);
+    void reset();
 
 signals:
-    void stepExecuted(int stepNumber, int totalSteps);
+    void stepExecuted(int step, int total);
+    void highlightLine(int line);
     void executionFinished();
-    void variableChanged(const QString& name, const QVariant& value);
 
 private:
-    // Step execution
-    void executeStepInternal(const QJsonObject& step);
+    void processStep(const QJsonObject& step);
 
-    // Internal Variable Management
-    void setVariable(const QString& name, const QVariant& value);
-    QVariant getVariable(const QString& name);
+    // Sync functions
+    void syncVariable(const QString& name, const QVariant& value);
+    void syncArray(const QString& name, const QJsonArray& listData);
+    void syncStack(const QJsonArray& stackData);
+    void syncGraph(const QString& name, const QJsonObject& graphData);
 
-    // Visual helpers
-    void createVariableVisual(const QString& name,
-                              const QVariant& value);
-    void updateVariableVisual(const QString& name,
-                              const QVariant& value);
-    void createArrayVisual(const QString& name,
-                           const QVector<int>& values);
-    void updateArrayVisual(const QString& name,
-                           int index,
-                           int value);
-    void highlightArrayElements(const QString& name,
-                                const QVector<int>& indices,
-                                const QColor& color);
-    void animateSwap(const QString& arrayName,
-                     int idx1,
-                     int idx2);
-    void showMessage(const QString& message);
-
-    // State
     QGraphicsScene* m_scene;
     QJsonArray m_steps;
     int m_currentStep;
-
-    QMap<QString, QVariant> m_variables;
-    QMap<QString, QVector<int>> m_arrays;
+    VisualizationMode m_mode;
 
     QMap<QString, VariableItem*> m_variableItems;
     QMap<QString, ArrayItem*> m_arrayItems;
+    QVector<CallStackItem*> m_stackItems;
+    QMap<QString, GraphItem*> m_graphItems;
 
-    QGraphicsTextItem* m_messageText;
+    QGraphicsTextItem* m_errorItem;
+    QGraphicsTextItem* m_consoleItem; // <--- This was missing!
 };
 
 #endif // ASTVISUALIZER_H

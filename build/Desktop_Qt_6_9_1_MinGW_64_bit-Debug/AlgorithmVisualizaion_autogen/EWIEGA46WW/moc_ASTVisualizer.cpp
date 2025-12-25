@@ -31,86 +31,6 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN12VariableItemE_t {};
-} // unnamed namespace
-
-template <> constexpr inline auto VariableItem::qt_create_metaobjectdata<qt_meta_tag_ZN12VariableItemE_t>()
-{
-    namespace QMC = QtMocConstants;
-    QtMocHelpers::StringRefStorage qt_stringData {
-        "VariableItem",
-        "opacity"
-    };
-
-    QtMocHelpers::UintData qt_methods {
-    };
-    QtMocHelpers::UintData qt_properties {
-        // property 'opacity'
-        QtMocHelpers::PropertyData<qreal>(1, QMetaType::QReal, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet),
-    };
-    QtMocHelpers::UintData qt_enums {
-    };
-    return QtMocHelpers::metaObjectData<VariableItem, qt_meta_tag_ZN12VariableItemE_t>(QMC::MetaObjectFlag{}, qt_stringData,
-            qt_methods, qt_properties, qt_enums);
-}
-Q_CONSTINIT const QMetaObject VariableItem::staticMetaObject = { {
-    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN12VariableItemE_t>.stringdata,
-    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN12VariableItemE_t>.data,
-    qt_static_metacall,
-    nullptr,
-    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN12VariableItemE_t>.metaTypes,
-    nullptr
-} };
-
-void VariableItem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
-{
-    auto *_t = static_cast<VariableItem *>(_o);
-    if (_c == QMetaObject::ReadProperty) {
-        void *_v = _a[0];
-        switch (_id) {
-        case 0: *reinterpret_cast<qreal*>(_v) = _t->opacity(); break;
-        default: break;
-        }
-    }
-    if (_c == QMetaObject::WriteProperty) {
-        void *_v = _a[0];
-        switch (_id) {
-        case 0: _t->setOpacity(*reinterpret_cast<qreal*>(_v)); break;
-        default: break;
-        }
-    }
-}
-
-const QMetaObject *VariableItem::metaObject() const
-{
-    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
-}
-
-void *VariableItem::qt_metacast(const char *_clname)
-{
-    if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN12VariableItemE_t>.strings))
-        return static_cast<void*>(this);
-    if (!strcmp(_clname, "QGraphicsRectItem"))
-        return static_cast< QGraphicsRectItem*>(this);
-    return QObject::qt_metacast(_clname);
-}
-
-int VariableItem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
-{
-    _id = QObject::qt_metacall(_c, _id, _a);
-    if (_id < 0)
-        return _id;
-    if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
-            || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
-            || _c == QMetaObject::RegisterPropertyMetaType) {
-        qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
-    }
-    return _id;
-}
-namespace {
 struct qt_meta_tag_ZN13ASTVisualizerE_t {};
 } // unnamed namespace
 
@@ -121,13 +41,11 @@ template <> constexpr inline auto ASTVisualizer::qt_create_metaobjectdata<qt_met
         "ASTVisualizer",
         "stepExecuted",
         "",
-        "stepNumber",
-        "totalSteps",
-        "executionFinished",
-        "variableChanged",
-        "name",
-        "QVariant",
-        "value"
+        "step",
+        "total",
+        "highlightLine",
+        "line",
+        "executionFinished"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -135,12 +53,12 @@ template <> constexpr inline auto ASTVisualizer::qt_create_metaobjectdata<qt_met
         QtMocHelpers::SignalData<void(int, int)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 3 }, { QMetaType::Int, 4 },
         }}),
-        // Signal 'executionFinished'
-        QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'variableChanged'
-        QtMocHelpers::SignalData<void(const QString &, const QVariant &)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 7 }, { 0x80000000 | 8, 9 },
+        // Signal 'highlightLine'
+        QtMocHelpers::SignalData<void(int)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 6 },
         }}),
+        // Signal 'executionFinished'
+        QtMocHelpers::SignalData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -165,17 +83,17 @@ void ASTVisualizer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->stepExecuted((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 1: _t->executionFinished(); break;
-        case 2: _t->variableChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QVariant>>(_a[2]))); break;
+        case 1: _t->highlightLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 2: _t->executionFinished(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)(int , int )>(_a, &ASTVisualizer::stepExecuted, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)()>(_a, &ASTVisualizer::executionFinished, 1))
+        if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)(int )>(_a, &ASTVisualizer::highlightLine, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)(const QString & , const QVariant & )>(_a, &ASTVisualizer::variableChanged, 2))
+        if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)()>(_a, &ASTVisualizer::executionFinished, 2))
             return;
     }
 }
@@ -218,14 +136,14 @@ void ASTVisualizer::stepExecuted(int _t1, int _t2)
 }
 
 // SIGNAL 1
-void ASTVisualizer::executionFinished()
+void ASTVisualizer::highlightLine(int _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
 }
 
 // SIGNAL 2
-void ASTVisualizer::variableChanged(const QString & _t1, const QVariant & _t2)
+void ASTVisualizer::executionFinished()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1, _t2);
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP
