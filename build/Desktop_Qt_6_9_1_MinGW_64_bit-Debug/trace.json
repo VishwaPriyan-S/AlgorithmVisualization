@@ -1,0 +1,262 @@
+[
+    {
+        "line": 10,
+        "event": "step",
+        "message": "Graph initialized",
+        "stack": [],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    },
+    {
+        "line": 20,
+        "event": "step",
+        "message": "Start BFS at A",
+        "stack": [
+            "bfs"
+        ],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    },
+    {
+        "line": 25,
+        "event": "step",
+        "message": "Visited A",
+        "stack": [
+            "bfs",
+            "A"
+        ],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    },
+    {
+        "line": 30,
+        "event": "step",
+        "message": "Found neighbor B",
+        "stack": [
+            "bfs",
+            "A",
+            "B"
+        ],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    },
+    {
+        "line": 30,
+        "event": "step",
+        "message": "Found neighbor C",
+        "stack": [
+            "bfs",
+            "A",
+            "C"
+        ],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    },
+    {
+        "line": 25,
+        "event": "step",
+        "message": "Visited B",
+        "stack": [
+            "bfs",
+            "B"
+        ],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    },
+    {
+        "line": 30,
+        "event": "step",
+        "message": "Found neighbor D",
+        "stack": [
+            "bfs",
+            "B",
+            "D"
+        ],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    },
+    {
+        "line": 25,
+        "event": "step",
+        "message": "Visited C",
+        "stack": [
+            "bfs",
+            "C"
+        ],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    },
+    {
+        "line": 25,
+        "event": "step",
+        "message": "Visited D",
+        "stack": [
+            "bfs",
+            "D"
+        ],
+        "variables": {
+            "myGraph": {
+                "A": [
+                    "B",
+                    "C"
+                ],
+                "B": [
+                    "A",
+                    "D"
+                ],
+                "C": [
+                    "A",
+                    "D"
+                ],
+                "D": [
+                    "B",
+                    "C"
+                ]
+            }
+        }
+    }
+]

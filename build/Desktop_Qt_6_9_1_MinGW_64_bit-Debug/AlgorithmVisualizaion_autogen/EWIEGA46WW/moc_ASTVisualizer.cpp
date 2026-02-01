@@ -41,11 +41,11 @@ template <> constexpr inline auto ASTVisualizer::qt_create_metaobjectdata<qt_met
         "ASTVisualizer",
         "stepExecuted",
         "",
-        "step",
-        "total",
+        "currentStep",
+        "totalSteps",
+        "executionFinished",
         "highlightLine",
-        "line",
-        "executionFinished"
+        "line"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -53,12 +53,12 @@ template <> constexpr inline auto ASTVisualizer::qt_create_metaobjectdata<qt_met
         QtMocHelpers::SignalData<void(int, int)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 3 }, { QMetaType::Int, 4 },
         }}),
-        // Signal 'highlightLine'
-        QtMocHelpers::SignalData<void(int)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 6 },
-        }}),
         // Signal 'executionFinished'
-        QtMocHelpers::SignalData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'highlightLine'
+        QtMocHelpers::SignalData<void(int)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 7 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -83,17 +83,17 @@ void ASTVisualizer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->stepExecuted((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 1: _t->highlightLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 2: _t->executionFinished(); break;
+        case 1: _t->executionFinished(); break;
+        case 2: _t->highlightLine((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)(int , int )>(_a, &ASTVisualizer::stepExecuted, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)(int )>(_a, &ASTVisualizer::highlightLine, 1))
+        if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)()>(_a, &ASTVisualizer::executionFinished, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)()>(_a, &ASTVisualizer::executionFinished, 2))
+        if (QtMocHelpers::indexOfMethod<void (ASTVisualizer::*)(int )>(_a, &ASTVisualizer::highlightLine, 2))
             return;
     }
 }
@@ -136,14 +136,14 @@ void ASTVisualizer::stepExecuted(int _t1, int _t2)
 }
 
 // SIGNAL 1
-void ASTVisualizer::highlightLine(int _t1)
+void ASTVisualizer::executionFinished()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 
 // SIGNAL 2
-void ASTVisualizer::executionFinished()
+void ASTVisualizer::highlightLine(int _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
 }
 QT_WARNING_POP

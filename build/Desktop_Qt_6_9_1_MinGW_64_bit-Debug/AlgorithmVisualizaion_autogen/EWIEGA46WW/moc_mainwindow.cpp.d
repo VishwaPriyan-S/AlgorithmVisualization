@@ -4,7 +4,7 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/QJsonObject \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QMap \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/QPropertyAnimation \
+  D:/Qt/6.9.1/mingw_64/include/QtCore/QSet \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QTimer \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QVector \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
@@ -14,7 +14,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/q20type_traits.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q20utility.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q23utility.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qabstractanimation.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qanystringview.h \
@@ -50,7 +49,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qeasingcurve.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qendian.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qeventloop.h \
@@ -96,7 +94,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/qpair.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qpoint.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qprocessordetection.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qpropertyanimation.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qrect.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qrefcount.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qregularexpression.h \
@@ -151,7 +148,6 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtCore/qutf8stringview.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/quuid.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h \
-  D:/Qt/6.9.1/mingw_64/include/QtCore/qvariantanimation.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qvarlengtharray.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qvector.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/qversiontagging.h \
@@ -191,6 +187,8 @@ D:/QtProjects/AlgorithmVisualizaion/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Al
   D:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsItem \
+  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsLineItem \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsRectItem \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsScene \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsTextItem \

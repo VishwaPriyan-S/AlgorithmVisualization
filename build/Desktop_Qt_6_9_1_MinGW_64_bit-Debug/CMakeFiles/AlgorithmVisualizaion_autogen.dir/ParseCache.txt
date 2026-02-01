@@ -806,7 +806,7 @@ D:/QtProjects/AlgorithmVisualizaion/mainwindow.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QJsonObject
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QMap
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QObject
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QPropertyAnimation
+ mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QSet
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QTimer
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QVector
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h
@@ -816,7 +816,6 @@ D:/QtProjects/AlgorithmVisualizaion/mainwindow.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q20type_traits.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q20utility.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q23utility.h
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qabstractanimation.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qabstracteventdispatcher.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qanystringview.h
@@ -852,7 +851,6 @@ D:/QtProjects/AlgorithmVisualizaion/mainwindow.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qdeadlinetimer.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qeasingcurve.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qelapsedtimer.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qendian.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qeventloop.h
@@ -898,7 +896,6 @@ D:/QtProjects/AlgorithmVisualizaion/mainwindow.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qpair.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qpoint.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qprocessordetection.h
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qpropertyanimation.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qrect.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qrefcount.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qregularexpression.h
@@ -953,7 +950,6 @@ D:/QtProjects/AlgorithmVisualizaion/mainwindow.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qutf8stringview.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/quuid.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qvariantanimation.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qvector.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qversiontagging.h
@@ -993,6 +989,8 @@ D:/QtProjects/AlgorithmVisualizaion/mainwindow.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h
+ mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsItem
+ mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsLineItem
  mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsRectItem
  mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsScene
  mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsTextItem
@@ -1241,7 +1239,7 @@ D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QJsonObject
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QMap
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QObject
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QPropertyAnimation
+ mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QSet
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/QVector
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h
@@ -1250,7 +1248,6 @@ D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q20type_traits.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q20utility.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/q23utility.h
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qabstractanimation.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qanystringview.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qarraydata.h
@@ -1283,7 +1280,6 @@ D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qdatastream.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qdebug.h
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qeasingcurve.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qendian.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qexceptionhandling.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qflags.h
@@ -1326,7 +1322,6 @@ D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qpair.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qpoint.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qprocessordetection.h
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qpropertyanimation.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qrect.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qrefcount.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qregularexpression.h
@@ -1380,7 +1375,6 @@ D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qutf8stringview.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/quuid.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h
- mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qvariantanimation.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qvector.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtCore/qversiontagging.h
@@ -1405,6 +1399,8 @@ D:/QtProjects/AlgorithmVisualizaion/ASTVisualizer.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h
+ mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsItem
+ mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsLineItem
  mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsRectItem
  mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsScene
  mdp:D:/Qt/6.9.1/mingw_64/include/QtWidgets/QGraphicsTextItem

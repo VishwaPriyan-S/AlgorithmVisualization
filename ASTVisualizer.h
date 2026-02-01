@@ -2,43 +2,66 @@
 #define ASTVISUALIZER_H
 
 #include <QObject>
-#include <QJsonArray>
-#include <QJsonObject>
 #include <QGraphicsScene>
+#include <QGraphicsItem>
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
-#include <QPropertyAnimation>
+#include <QGraphicsLineItem>
+#include <QJsonObject>
+#include <QJsonArray>
 #include <QMap>
 #include <QVector>
+#include <QSet>
 
-// ==================== Enums ====================
-enum class VisualizationMode {
-    Generic,    // Boxes
-    Sorting,    // Bar Chart
-    Recursion,   // Call Stack Focus
-    Graph       //for Graphs
+// 1. FIX: Added 'Recursion' to VisualizationMode
+enum class VisualizationMode { Generic, Sorting, Graph, Recursion };
+
+// ==================== NodeItem (Draggable Circle) ====================
+class NodeItem : public QGraphicsEllipseItem {
+public:
+    NodeItem(QGraphicsItem* parent = nullptr);
+    void addEdge(QGraphicsLineItem* line, bool isStart);
+protected:
+    QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
+private:
+    struct EdgeInfo { QGraphicsLineItem* line; bool isStart; };
+    QVector<EdgeInfo> edges;
+};
+
+// ==================== GraphItem ====================
+class GraphItem : public QGraphicsItem {
+public:
+    GraphItem(const QString& name, QGraphicsItem* parent = nullptr);
+    void updateData(const QJsonObject& adjList);
+    QRectF boundingRect() const override;
+    void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) override;
+
+private:
+    QString m_name;
+    QGraphicsTextItem* m_nameText;
+    struct NodeData { NodeItem* circle; QGraphicsTextItem* label; QPointF pos; };
+    QMap<QString, NodeData> m_nodes;
+    QList<QGraphicsLineItem*> m_edges;
 };
 
 // ==================== ArrayItem ====================
 class ArrayItem : public QGraphicsItem {
 public:
     ArrayItem(const QString& name, QGraphicsItem* parent = nullptr);
-
     void setMode(VisualizationMode mode);
-    void updateData(const QVector<int>& values); // Re-syncs entire array
-
+    void updateData(const QVector<int>& values); // Now detects changes
     QRectF boundingRect() const override;
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
+    void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) override;
 
 private:
     void updateLayout();
-
     QString m_name;
-    QVector<int> m_values;
-    QVector<QGraphicsRectItem*> m_visualElements;
-    QVector<QGraphicsTextItem*> m_textElements;
-    QGraphicsTextItem* m_nameText;
     VisualizationMode m_mode;
+    QVector<int> m_values;
+    QSet<int> m_highlightIndices; // 2. FIX: Track changed indices
+    QGraphicsTextItem* m_nameText;
+    QList<QGraphicsRectItem*> m_visualElements;
+    QList<QGraphicsTextItem*> m_textElements;
 };
 
 // ==================== VariableItem ====================
@@ -46,7 +69,6 @@ class VariableItem : public QGraphicsRectItem {
 public:
     VariableItem(const QString& name, QGraphicsItem* parent = nullptr);
     void updateValue(const QString& value);
-
 private:
     QGraphicsTextItem* m_nameText;
     QGraphicsTextItem* m_valueText;
@@ -58,50 +80,23 @@ public:
     CallStackItem(const QString& funcName, int depth, QGraphicsItem* parent = nullptr);
 };
 
-// ====================GraphItem========================
-class GraphItem : public QGraphicsItem {
-public:
-    GraphItem(const QString& name, QGraphicsItem* parent = nullptr);
-    void updateData(const QJsonObject& adjList); // Expects { "0": [1, 2], ... }
-
-    QRectF boundingRect() const override;
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
-
-private:
-    QString m_name;
-    QGraphicsTextItem* m_nameText;
-
-    // Structure to hold visual parts of a node
-    struct VisualNode {
-        QGraphicsEllipseItem* circle;
-        QGraphicsTextItem* label;
-        QPointF pos;
-    };
-
-    QMap<QString, VisualNode> m_nodes;
-    QVector<QGraphicsLineItem*> m_edges;
-};
-// ==================== ASTVisualizer ====================
+// ==================== ASTVisualizer (Main) ====================
 class ASTVisualizer : public QObject {
     Q_OBJECT
-
 public:
     explicit ASTVisualizer(QGraphicsScene* scene, QObject* parent = nullptr);
-
     void loadSteps(const QJsonArray& steps);
     void executeStep();
     void setMode(VisualizationMode mode);
     void reset();
 
 signals:
-    void stepExecuted(int step, int total);
-    void highlightLine(int line);
+    void stepExecuted(int currentStep, int totalSteps);
     void executionFinished();
+    void highlightLine(int line);
 
 private:
     void processStep(const QJsonObject& step);
-
-    // Sync functions
     void syncVariable(const QString& name, const QVariant& value);
     void syncArray(const QString& name, const QJsonArray& listData);
     void syncStack(const QJsonArray& stackData);
@@ -111,14 +106,13 @@ private:
     QJsonArray m_steps;
     int m_currentStep;
     VisualizationMode m_mode;
+    QGraphicsTextItem* m_errorItem;
+    QGraphicsTextItem* m_consoleItem;
 
     QMap<QString, VariableItem*> m_variableItems;
     QMap<QString, ArrayItem*> m_arrayItems;
-    QVector<CallStackItem*> m_stackItems;
+    QList<CallStackItem*> m_stackItems;
     QMap<QString, GraphItem*> m_graphItems;
-
-    QGraphicsTextItem* m_errorItem;
-    QGraphicsTextItem* m_consoleItem; // <--- This was missing!
 };
 
 #endif // ASTVISUALIZER_H
