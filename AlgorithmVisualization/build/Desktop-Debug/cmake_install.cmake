@@ -1,4 +1,4 @@
-# Install script for directory: /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization
+# Install script for directory: /home/vishwa/AlgorithmVisualizer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -2,11 +2,11 @@
 	"BUILD_DIR" : "/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen",
 	"CMAKE_BINARY_DIR" : "/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug",
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/vishwa/AlgorithmVisualizer",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/CMakeLists.txt",
+		"/home/vishwa/AlgorithmVisualizer/CMakeLists.txt",
 		"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake",
 		"/usr/share/cmake/Modules/CMakeDetermineSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeSystem.cmake.in",
@@ -508,38 +508,38 @@
 		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
 		"/usr/share/cmake/Modules/GNUInstallDirs.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization",
+	"CMAKE_SOURCE_DIR" : "/home/vishwa/AlgorithmVisualizer",
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "AlgorithmVisualizaion_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/ASTVisualizer.h",
+			"/home/vishwa/AlgorithmVisualizer/ASTVisualizer.h",
 			"MU",
 			"EWIEGA46WW/moc_ASTVisualizer.cpp",
 			null
 		],
 		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/code_highlighter.h",
+			"/home/vishwa/AlgorithmVisualizer/Widgets/code_highlighter.h",
 			"MU",
 			"WHF3XMZT5M/moc_code_highlighter.cpp",
 			null
 		],
 		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/control_panel.h",
+			"/home/vishwa/AlgorithmVisualizer/Widgets/control_panel.h",
 			"MU",
 			"WHF3XMZT5M/moc_control_panel.cpp",
 			null
 		],
 		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/interpreter/PythonParserEngine.h",
+			"/home/vishwa/AlgorithmVisualizer/interpreter/PythonParserEngine.h",
 			"MU",
 			"KR56ZOOAQI/moc_PythonParserEngine.cpp",
 			null
 		],
 		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/mainwindow.h",
+			"/home/vishwa/AlgorithmVisualizer/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
@@ -604,36 +604,24 @@
 	"SETTINGS_FILE" : "/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/AlgorithmVisualizaion_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/vishwa/AlgorithmVisualizer/ASTVisualizer.cpp", "MU", null ],
 		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/ASTVisualizer.cpp",
+			"/home/vishwa/AlgorithmVisualizer/Widgets/code_highlighter.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/code_highlighter.cpp",
+			"/home/vishwa/AlgorithmVisualizer/Widgets/control_panel.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/control_panel.cpp",
+			"/home/vishwa/AlgorithmVisualizer/interpreter/PythonParserEngine.cpp",
 			"MU",
 			null
 		],
-		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/interpreter/PythonParserEngine.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/mainwindow.cpp",
-			"MU",
-			null
-		]
+		[ "/home/vishwa/AlgorithmVisualizer/main.cpp", "MU", null ],
+		[ "/home/vishwa/AlgorithmVisualizer/mainwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

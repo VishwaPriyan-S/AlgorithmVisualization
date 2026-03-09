@@ -1,7 +1,7 @@
-/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/mainwindow.h \
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/vishwa/AlgorithmVisualizer/mainwindow.h \
   /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/moc_predefs.h \
-  /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/ASTVisualizer.h \
-  /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/control_panel.h \
+  /home/vishwa/AlgorithmVisualizer/ASTVisualizer.h \
+  /home/vishwa/AlgorithmVisualizer/Widgets/control_panel.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

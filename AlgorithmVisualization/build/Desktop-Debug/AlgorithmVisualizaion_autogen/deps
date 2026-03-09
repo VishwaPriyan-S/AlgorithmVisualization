@@ -1,20 +1,20 @@
 AlgorithmVisualizaion_autogen/timestamp: \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/ASTVisualizer.cpp \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/ASTVisualizer.h \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/CMakeLists.txt \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/code_highlighter.cpp \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/code_highlighter.h \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/control_panel.cpp \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/control_panel.h \
+	/home/vishwa/AlgorithmVisualizer/ASTVisualizer.cpp \
+	/home/vishwa/AlgorithmVisualizer/ASTVisualizer.h \
 	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/moc_predefs.h \
 	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake \
 	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/4.2.3/CMakeSystem.cmake \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/interpreter/PythonParserEngine.cpp \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/interpreter/PythonParserEngine.h \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/main.cpp \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/mainwindow.cpp \
-	/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/mainwindow.h \
+	/home/vishwa/AlgorithmVisualizer/CMakeLists.txt \
+	/home/vishwa/AlgorithmVisualizer/Widgets/code_highlighter.cpp \
+	/home/vishwa/AlgorithmVisualizer/Widgets/code_highlighter.h \
+	/home/vishwa/AlgorithmVisualizer/Widgets/control_panel.cpp \
+	/home/vishwa/AlgorithmVisualizer/Widgets/control_panel.h \
+	/home/vishwa/AlgorithmVisualizer/interpreter/PythonParserEngine.cpp \
+	/home/vishwa/AlgorithmVisualizer/interpreter/PythonParserEngine.h \
+	/home/vishwa/AlgorithmVisualizer/main.cpp \
+	/home/vishwa/AlgorithmVisualizer/mainwindow.cpp \
+	/home/vishwa/AlgorithmVisualizer/mainwindow.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \

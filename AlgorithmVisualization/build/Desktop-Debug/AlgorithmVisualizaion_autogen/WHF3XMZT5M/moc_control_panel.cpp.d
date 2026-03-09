@@ -1,4 +1,4 @@
-/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/WHF3XMZT5M/moc_control_panel.cpp: /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/Widgets/control_panel.h \
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/WHF3XMZT5M/moc_control_panel.cpp: /home/vishwa/AlgorithmVisualizer/Widgets/control_panel.h \
   /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \

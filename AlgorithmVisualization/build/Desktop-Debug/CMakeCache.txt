@@ -21,7 +21,7 @@ AlgorithmVisualizaion_BINARY_DIR:STATIC=/home/vishwa/AlgorithmVisualizer/Algorit
 AlgorithmVisualizaion_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-AlgorithmVisualizaion_SOURCE_DIR:STATIC=/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization
+AlgorithmVisualizaion_SOURCE_DIR:STATIC=/home/vishwa/AlgorithmVisualizer
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -460,7 +460,7 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/vishwa/AlgorithmVisualizer
 //ADVANCED property for variable: CMAKE_INSTALL_BINDIR
 CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_DATADIR

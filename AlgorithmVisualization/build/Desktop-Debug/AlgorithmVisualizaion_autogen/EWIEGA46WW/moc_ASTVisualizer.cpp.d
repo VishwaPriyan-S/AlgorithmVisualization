@@ -1,4 +1,4 @@
-/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/EWIEGA46WW/moc_ASTVisualizer.cpp: /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/ASTVisualizer.h \
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/EWIEGA46WW/moc_ASTVisualizer.cpp: /home/vishwa/AlgorithmVisualizer/ASTVisualizer.h \
   /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \

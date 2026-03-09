@@ -44,7 +44,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization -B/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug
+  command = /usr/bin/cmake --regenerate-during-build -S/home/vishwa/AlgorithmVisualizer -B/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug
   description = Re-running CMake...
   generator = 1
 
