@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_AlgorithmVisualizaion_FILE /home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/AlgorithmVisualizaion)
+set(__QT_DEPLOY_TARGET_AlgorithmVisualizaion_TYPE EXECUTABLE)

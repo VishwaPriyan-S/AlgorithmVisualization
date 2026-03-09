@@ -1,0 +1,9 @@
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/AlgorithmVisualizaion.dir
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/install.dir
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/AlgorithmVisualizaion_autogen_timestamp_deps.dir
+/home/vishwa/AlgorithmVisualizer/AlgorithmVisualization/build/Desktop-Debug/CMakeFiles/AlgorithmVisualizaion_autogen.dir
