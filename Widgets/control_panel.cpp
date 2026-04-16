@@ -292,14 +292,10 @@ void ControlPanel::onExecutionStateChanged(bool isRunning)
 void ControlPanel::onPlayPauseClicked()
 {
     if (m_isPlaying) {
-        emit pauseClicked(); // Optional, depending on if MW uses it
-        // MW handles the logic, we just signal "Play" was toggled usually.
-        // But here we emit playClicked() because MW logic toggles on same button
-        emit playClicked();
+        emit pauseClicked();
     } else {
         emit playClicked();
     }
-    // We don't flip m_isPlaying here immediately; let MainWindow call setPlayingState
 }
 
 void ControlPanel::onSpeedSliderChanged(int value)

@@ -32,7 +32,7 @@ private:
 class GraphItem : public QGraphicsItem {
 public:
     GraphItem(const QString& name, QGraphicsItem* parent = nullptr);
-    void updateData(const QJsonObject& adjList);
+    void updateData(const QJsonObject& adjList, const QJsonObject& metadata = QJsonObject());
     QRectF boundingRect() const override;
     void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) override;
 
@@ -50,6 +50,7 @@ public:
     ArrayItem(const QString& name, QGraphicsItem* parent = nullptr);
     void setMode(VisualizationMode mode);
     void updateData(const QVector<int>& values); // Now detects changes
+    void updateStepContext(const QJsonObject& vars);
     QRectF boundingRect() const override;
     void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) override;
 
@@ -59,6 +60,8 @@ private:
     VisualizationMode m_mode;
     QVector<int> m_values;
     QSet<int> m_highlightIndices; // 2. FIX: Track changed indices
+    QSet<int> m_compareIndices;
+    int m_sortedStart;
     QGraphicsTextItem* m_nameText;
     QList<QGraphicsRectItem*> m_visualElements;
     QList<QGraphicsTextItem*> m_textElements;
@@ -98,9 +101,9 @@ signals:
 private:
     void processStep(const QJsonObject& step);
     void syncVariable(const QString& name, const QVariant& value);
-    void syncArray(const QString& name, const QJsonArray& listData);
+    void syncArray(const QString& name, const QJsonArray& listData, const QJsonObject& vars);
     void syncStack(const QJsonArray& stackData);
-    void syncGraph(const QString& name, const QJsonObject& graphData);
+    void syncGraph(const QString& name, const QJsonObject& graphData, const QJsonObject& metadata = QJsonObject());
 
     QGraphicsScene* m_scene;
     QJsonArray m_steps;
