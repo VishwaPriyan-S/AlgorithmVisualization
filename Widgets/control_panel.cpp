@@ -29,7 +29,7 @@ ControlPanel::ControlPanel(QWidget *parent)
     , m_currentSpeed(50)
 {
     setupUI();
-    setFixedHeight(160); // Increased slightly to fit elements comfortably
+    setFixedHeight(80); // Compact layout
 }
 
 void ControlPanel::setupUI()
@@ -164,8 +164,11 @@ void ControlPanel::setupUI()
 
     // Add layouts
     m_mainLayout->addLayout(m_controlButtonsLayout);
-    m_mainLayout->addLayout(m_progressLayout);
-    m_mainLayout->addLayout(m_speedLayout);
+    QHBoxLayout* secondRow = new QHBoxLayout();
+    secondRow->addLayout(m_progressLayout, 2);
+    secondRow->addSpacing(20);
+    secondRow->addLayout(m_speedLayout, 1);
+    m_mainLayout->addLayout(secondRow);
 
     // Initial state
     setPlayEnabled(false);
@@ -173,20 +176,51 @@ void ControlPanel::setupUI()
     setResetEnabled(false);
 
     // Styling
-    setStyleSheet(
-        "ControlPanel { background-color: #2b2b2b; border-top: 1px solid #555; }"
-        "QPushButton { background-color: #404040; border: 1px solid #666; border-radius: 3px; color: white; font-weight: bold; }"
-        "QPushButton:hover { background-color: #505050; border: 1px solid #777; }"
-        "QPushButton:pressed { background-color: #353535; }"
-        "QPushButton:disabled { background-color: #2b2b2b; color: #666; border: 1px solid #444; }"
-        "QProgressBar { border: 1px solid #666; border-radius: 3px; background-color: #2b2b2b; color: white; text-align: center; }"
-        "QProgressBar::chunk { background-color: #4a90e2; border-radius: 2px; }"
-        "QSpinBox { background-color: #404040; border: 1px solid #666; border-radius: 3px; color: white; padding: 2px; }"
-        "QSlider::groove:horizontal { border: 1px solid #666; height: 6px; background-color: #2b2b2b; border-radius: 3px; }"
-        "QSlider::handle:horizontal { background-color: #4a90e2; border: 1px solid #4a90e2; width: 16px; height: 16px; border-radius: 8px; margin: -5px 0px; }"
-        "QSlider::handle:horizontal:hover { background-color: #5ba0f2; }"
-        "QLabel { color: white; }"
-        );
+    setStyleSheet(R"(
+        ControlPanel { background-color: #252526; border-top: 1px solid #3c3c3c; }
+        QPushButton {
+            background-color: #3c3c3c;
+            border: 1px solid #555555;
+            border-radius: 3px;
+            color: #cccccc;
+            font-weight: bold;
+        }
+        QPushButton:hover { background-color: #505050; border-color: #666666; }
+        QPushButton:pressed { background-color: #333333; }
+        QPushButton:disabled { background-color: #2d2d2d; color: #555555; border-color: #3c3c3c; }
+        QProgressBar {
+            border: 1px solid #3c3c3c;
+            border-radius: 0px;
+            background-color: #1e1e1e;
+            color: #cccccc;
+            text-align: center;
+            font-size: 11px;
+        }
+        QProgressBar::chunk { background-color: #007acc; }
+        QSpinBox {
+            background-color: #3c3c3c;
+            border: 1px solid #555555;
+            border-radius: 0px;
+            color: #cccccc;
+            padding: 2px;
+        }
+        QSlider::groove:horizontal {
+            border: 1px solid #3c3c3c;
+            height: 4px;
+            background-color: #1e1e1e;
+            border-radius: 2px;
+        }
+        QSlider::handle:horizontal {
+            background-color: #007acc;
+            border: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 7px;
+            margin: -5px 0px;
+        }
+        QSlider::handle:horizontal:hover { background-color: #1a8ad4; }
+        QLabel { color: #cccccc; }
+    )");
 }
 
 // --- Methods required by MainWindow ---

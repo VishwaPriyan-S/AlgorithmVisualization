@@ -15,6 +15,7 @@
 
 #include "Widgets/control_panel.h"
 #include "ASTVisualizer.h"
+#include "OpenAIClient.h"
 
 class CodeHighlighter;
 
@@ -44,17 +45,21 @@ private slots:
     void onGoToEnd();
     void onStopClicked();
 
+    void onAIKeyActionClicked();
+    void onAnalysisComplete(const QJsonObject& metadata);
+    void onAnalysisFailed(const QString& errorString);
+
 private:
 
     void setupUI();
     void setupToolBar();
     void setupStatusBar();
     void setupConnections();
+    void tryStartPlayback();
 
     QSplitter* m_mainSplitter;
 
     QTextEdit* m_codeEditor;
-    QTextEdit* m_console;
 
     QGraphicsScene* m_scene;
     QGraphicsView* m_graphicsView;
@@ -66,6 +71,7 @@ private:
     ASTVisualizer* m_visualizer;
     QTimer* m_playTimer;
     CodeHighlighter* m_codeHighlighter;
+    OpenAIClient* m_aiClient;
 
     int m_totalSteps;
     int m_currentStep;
@@ -74,6 +80,11 @@ private:
     QByteArray m_processStdOut;
     QByteArray m_processStdErr;
     QTemporaryFile* m_tempCodeFile = nullptr;
+
+    bool m_tracerFinished = false;
+    bool m_aiFinished = false;
+    bool m_isAIEnabled = false;
+    QJsonObject m_aiMetadata;
 };
 
 #endif

@@ -19,82 +19,118 @@
 #include <QGraphicsView>
 #include <QDir>
 #include <QFileInfo>
+#include <QInputDialog>
+#include <QSettings>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
     m_visualizer(nullptr),
     m_playTimer(nullptr),
+    m_aiClient(new OpenAIClient(this)),
     m_totalSteps(0),
     m_currentStep(0)
 {
+    QSettings settings("MyCompany", "AlgorithmVisualizer");
+    m_aiClient->setApiKey(settings.value("groq_api_key", "").toString());
+    m_isAIEnabled = settings.value("ai_enabled", false).toBool();
+
+    setStyleSheet(R"(
+        QMainWindow { background-color: #1e1e1e; }
+        QWidget { background-color: #1e1e1e; color: #cccccc; font-family: 'Segoe UI', 'Consolas', sans-serif; font-size: 13px; }
+        QTextEdit {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            border: 1px solid #3c3c3c;
+            border-radius: 0px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            selection-background-color: #264f78;
+        }
+        QGraphicsView {
+            background-color: #1e1e1e;
+            border: 1px solid #3c3c3c;
+            border-radius: 0px;
+        }
+        QGroupBox {
+            background-color: #252526;
+            border: 1px solid #3c3c3c;
+            border-radius: 0px;
+            margin-top: 14px;
+            padding-top: 14px;
+            font-weight: 600;
+            color: #cccccc;
+        }
+        QGroupBox::title {
+            subcontrol-origin: margin;
+            left: 10px;
+            padding: 0 4px;
+            color: #cccccc;
+        }
+        QToolBar {
+            background-color: #3c3c3c;
+            border: none;
+            spacing: 4px;
+            padding: 2px 6px;
+        }
+        QToolButton {
+            background-color: transparent;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 10px;
+            color: #cccccc;
+            font-size: 12px;
+        }
+        QToolButton:hover { background-color: #505050; }
+        QToolButton:pressed { background-color: #404040; }
+        QComboBox {
+            background-color: #3c3c3c;
+            color: #cccccc;
+            border: 1px solid #555555;
+            border-radius: 0px;
+            padding: 3px 8px;
+        }
+        QComboBox::drop-down { border: none; }
+        QComboBox QAbstractItemView {
+            background-color: #252526;
+            color: #cccccc;
+            selection-background-color: #094771;
+        }
+        QStatusBar {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            font-size: 12px;
+        }
+        QLabel { color: #cccccc; }
+        QScrollBar:vertical {
+            background-color: #1e1e1e;
+            width: 12px;
+            margin: 0;
+        }
+        QScrollBar::handle:vertical {
+            background-color: #424242;
+            min-height: 30px;
+            border-radius: 0px;
+        }
+        QScrollBar::handle:vertical:hover { background-color: #4f4f4f; }
+        QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0px; }
+        QScrollBar:horizontal {
+            background-color: #1e1e1e;
+            height: 12px;
+        }
+        QScrollBar::handle:horizontal {
+            background-color: #424242;
+            min-width: 30px;
+        }
+        QScrollBar::handle:horizontal:hover { background-color: #4f4f4f; }
+        QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { width: 0px; }
+        QSplitter::handle { background-color: #3c3c3c; }
+    )");
+
     setWindowTitle("Algorithm Visualizer Pro");
     resize(1650,950);
 
-    setStyleSheet(R"(
-QMainWindow { background: #0b1220; color: #e2e8f0; }
 
-QGroupBox {
-    background: #111827;
-    border: 1px solid #1f2937;
-    border-radius: 12px;
-    margin-top: 10px;
-    font-weight: 600;
-    color: #cbd5e1;
-}
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 12px;
-    padding: 2px 8px;
-    color: #94a3b8;
-}
-
-QTextEdit {
-    background: #020617;
-    border: 1px solid #1e293b;
-    border-radius: 8px;
-    padding: 10px;
-    font-family: Consolas;
-    font-size: 13px;
-    color: #e2e8f0;
-}
-
-QGraphicsView {
-    background: #020617;
-    border: 1px solid #1e293b;
-    border-radius: 10px;
-}
-
-QToolBar {
-    background: #0f172a;
-    border-bottom: 1px solid #1f2937;
-    spacing: 8px;
-    padding: 6px;
-}
-
-QToolButton {
-    background: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    padding: 6px 12px;
-    color: #e2e8f0;
-}
-QToolButton:hover { background: #334155; }
-QToolButton:pressed { background: #475569; }
-
-QComboBox {
-    background: #1e293b;
-    color: #e2e8f0;
-    border: 1px solid #334155;
-    border-radius: 6px;
-    padding: 4px 8px;
-}
-
-QStatusBar {
-    background: #020617;
-    border-top: 1px solid #1f2937;
-    color: #cbd5e1;
-}
-)");
 
     setupUI();
     setupToolBar();
@@ -120,8 +156,8 @@ void MainWindow::setupUI()
     mainLayout->setSpacing(6);
 
     m_mainSplitter = new QSplitter(Qt::Horizontal);
-    m_mainSplitter->setHandleWidth(6);
-    m_mainSplitter->setStyleSheet("QSplitter::handle{background:#1e293b;}");
+    m_mainSplitter->setHandleWidth(2);
+    m_mainSplitter->setStyleSheet("QSplitter::handle{background:#3c3c3c;}");
 
     /*
     LEFT PANEL
@@ -153,7 +189,7 @@ void MainWindow::setupUI()
     QGroupBox* visGroup = new QGroupBox("Algorithm Visualization");
 
     m_scene = new QGraphicsScene(0,0,1200,800);
-    m_scene->setBackgroundBrush(QColor("#020617"));
+    m_scene->setBackgroundBrush(QColor("#0d1117"));
 
     m_graphicsView = new QGraphicsView(m_scene);
 
@@ -169,21 +205,9 @@ void MainWindow::setupUI()
     QVBoxLayout* visLayout = new QVBoxLayout(visGroup);
     visLayout->addWidget(m_graphicsView);
 
-    /*
-    CONSOLE OUTPUT
-    */
-
-    QGroupBox* consoleGroup = new QGroupBox("Console Output");
-
-    m_console = new QTextEdit();
-    m_console->setReadOnly(true);
-    m_console->setMaximumHeight(150);
-
-    QVBoxLayout* consoleLayout = new QVBoxLayout(consoleGroup);
-    consoleLayout->addWidget(m_console);
-
-    rightLayout->addWidget(visGroup,3);
-    rightLayout->addWidget(consoleGroup,1);
+    // Console Group removed.
+    
+    rightLayout->addWidget(visGroup, 1);
 
     /*
     SPLITTER
@@ -192,8 +216,8 @@ void MainWindow::setupUI()
     m_mainSplitter->addWidget(leftPanel);
     m_mainSplitter->addWidget(rightPanel);
 
-    m_mainSplitter->setStretchFactor(0,2);
-    m_mainSplitter->setStretchFactor(1,3);
+    m_mainSplitter->setStretchFactor(0, 1);
+    m_mainSplitter->setStretchFactor(1, 4);
 
     /*
     VISUALIZER + CONTROLS
@@ -216,15 +240,17 @@ void MainWindow::setupToolBar()
     bar->setMovable(false);
     bar->setIconSize(QSize(24,24));
 
-    QAction* runAction = bar->addAction("▶ Run");
-    QAction* pauseAction = bar->addAction("⏸ Pause");
-QAction* stopAction = bar->addAction("■ Stop");
-    QAction* resetAction = bar->addAction("⟲ Reset");
+    QAction* runAction = bar->addAction("Run");
+    QAction* pauseAction = bar->addAction("Pause");
+    QAction* stopAction = bar->addAction("Stop");
+    QAction* resetAction = bar->addAction("Reset");
 
     connect(runAction,&QAction::triggered,this,&MainWindow::onExecuteClicked);
     connect(pauseAction,&QAction::triggered,this,&MainWindow::onPauseClicked);
-connect(stopAction,&QAction::triggered,this,&MainWindow::onStopClicked);
+    connect(stopAction,&QAction::triggered,this,&MainWindow::onStopClicked);
     connect(resetAction,&QAction::triggered,this,&MainWindow::onResetClicked);
+
+
 
     bar->addSeparator();
 
@@ -257,6 +283,9 @@ void MainWindow::setupConnections()
 {
     connect(m_visualizer,&ASTVisualizer::stepExecuted,this,&MainWindow::onStepExecuted);
     connect(m_visualizer,&ASTVisualizer::executionFinished,this,&MainWindow::onExecutionFinished);
+
+    connect(m_aiClient, &OpenAIClient::analysisComplete, this, &MainWindow::onAnalysisComplete);
+    connect(m_aiClient, &OpenAIClient::analysisFailed, this, &MainWindow::onAnalysisFailed);
 
     connect(m_visualizer,&ASTVisualizer::highlightLine,this,[this](int line){
 
@@ -296,8 +325,18 @@ void MainWindow::onExecuteClicked()
     }
 
     onPauseClicked();
-    m_console->clear();
-    m_console->append("Starting Python trace...");
+    m_visualizer->logMessage("Starting Python trace...", true);
+
+    m_tracerFinished = false;
+    m_aiFinished = false;
+    m_aiMetadata = QJsonObject();
+    m_visualizer->setAIMetadata(m_aiMetadata); // clear old metadata
+
+    if (m_isAIEnabled) {
+        m_aiClient->analyzeCode(code);
+    } else {
+        m_aiFinished = true; // Skip AI wait if disabled
+    }
 
     if (m_activeProcess && m_activeProcess->state() != QProcess::NotRunning) {
         m_activeProcess->kill();
@@ -374,7 +413,7 @@ void MainWindow::onExecuteClicked()
         );
         return;
     }
-    m_console->append("Using tracer: " + scriptPath);
+    m_visualizer->logMessage("Using tracer: " + scriptPath);
 
     QProcess* proc = new QProcess(this);
     m_activeProcess = proc;
@@ -391,7 +430,7 @@ void MainWindow::onExecuteClicked()
         m_processStdErr.append(chunk);
         const QString msg = QString::fromUtf8(chunk).trimmed();
         if (!msg.isEmpty()) {
-            m_console->append("[stderr] " + msg);
+            m_visualizer->logMessage("[stderr] " + msg);
         }
     });
 
@@ -449,9 +488,11 @@ void MainWindow::onExecuteClicked()
         m_controlPanel->setCurrentStep(0);
 
         m_statusLabel->setText(QString("Loaded %1 steps").arg(m_totalSteps));
-        m_console->append(QString("Loaded %1 execution steps.").arg(m_totalSteps));
+        m_visualizer->logMessage(QString("Loaded %1 execution steps.").arg(m_totalSteps));
 
-        onPlayClicked();
+        m_tracerFinished = true;
+        tryStartPlayback();
+
         if (m_activeProcess == proc) {
             m_activeProcess = nullptr;
         }
@@ -488,7 +529,7 @@ void MainWindow::onStopClicked()
 
     if (m_activeProcess && m_activeProcess->state() != QProcess::NotRunning) {
         m_activeProcess->kill();
-        m_console->append("Execution stopped.");
+        m_visualizer->logMessage("Execution stopped.");
     }
 
     m_statusLabel->setText("Stopped");
@@ -578,4 +619,41 @@ void MainWindow::onGoToEnd()
 {
     if(m_totalSteps > 0)
         onGoToStep(m_totalSteps - 1);
+}
+
+void MainWindow::onAIKeyActionClicked() {
+    QSettings settings("MyCompany", "AlgorithmVisualizer");
+    bool ok;
+    QString key = QInputDialog::getText(this, "Groq API Key",
+                                        "Enter your Groq API Key:", QLineEdit::Password,
+                                        settings.value("groq_api_key").toString(), &ok);
+    if (ok) {
+        settings.setValue("groq_api_key", key);
+        m_aiClient->setApiKey(key);
+    }
+    
+    // Also ask to enable AI
+    int ret = QMessageBox::question(this, "Enable AI", "Do you want to enable AI enhanced visualization for future runs?", QMessageBox::Yes | QMessageBox::No);
+    m_isAIEnabled = (ret == QMessageBox::Yes);
+    settings.setValue("ai_enabled", m_isAIEnabled);
+}
+
+void MainWindow::onAnalysisComplete(const QJsonObject& metadata) {
+    m_aiMetadata = metadata;
+    m_aiFinished = true;
+    tryStartPlayback();
+}
+
+void MainWindow::onAnalysisFailed(const QString& errorString) {
+    m_aiFinished = true;
+    tryStartPlayback();
+}
+
+void MainWindow::tryStartPlayback() {
+    if (m_tracerFinished && m_aiFinished) {
+        if (!m_aiMetadata.isEmpty()) {
+            m_visualizer->setAIMetadata(m_aiMetadata);
+        }
+        onPlayClicked();
+    }
 }

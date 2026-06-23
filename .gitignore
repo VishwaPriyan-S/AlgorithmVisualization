@@ -1,0 +1,29 @@
+# Build output
+build/
+
+# Qt Creator user-specific files
+CMakeLists.txt.user
+*.user
+
+# Compiled objects
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Qt generated
+*_autogen/
+moc_*
+ui_*
+qrc_*
+
+# IDE
+.qtcreator/
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store

@@ -1,170 +1,301 @@
-# Algorithm Visualization Tool
+<p align="center">
+  <h1 align="center">Algorithm Visualizer Pro</h1>
+  <p align="center">
+    <strong>A cinematic, step-by-step algorithm visualization desktop app</strong><br>
+    Write Python algorithms → Watch them execute with rich, animated graphics
+  </p>
+</p>
 
-A desktop application that visualizes the execution of Python programs step-by-step.
-The system traces Python code using `sys.settrace()` and renders the program state using a C++ Qt visualization engine.
-
-The tool helps understand algorithms, recursion, and data structures by showing how variables, arrays, graphs, and call stacks change during execution.
-
----
-
-## Features
-
-* Step-by-step visualization of Python program execution
-* Automatic detection of variables, arrays, and graphs
-* Sorting visualization with animated bars
-* Recursion call stack visualization
-* Graph visualization using adjacency lists
-* Console output display
-* Line-by-line code highlighting
-* Animated execution playback
+<p align="center">
+  <img src="https://img.shields.io/badge/Qt-6.9-41CD52?logo=qt&logoColor=white" alt="Qt 6.9">
+  <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white" alt="C++17">
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python 3">
+  <img src="https://img.shields.io/badge/AI-Groq%20%2F%20LLaMA-FF6B35" alt="AI Enhanced">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+</p>
 
 ---
 
-## System Architecture
+## 📸 Screenshots
 
-```
-Python Code
-     │
-     ▼
-Python Tracer (sys.settrace)
-     │
-     ▼
-Execution Steps → JSON
-     │
-     ▼
-C++ Qt Visualization Engine
-     │
-     ▼
-Animated Algorithm Visualization
-```
+<p align="center">
+  <img src="screenshots/sorting_visualization.png" alt="Sorting Visualization" width="90%">
+  <br>
+  <em>Bubble Sort — Proportional bars with variable cards, compare highlighting, and call stack</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/tree_visualization.png" alt="Tree Visualization" width="90%">
+  <br>
+  <em>Binary Tree Inorder Traversal — Auto-detected tree layout with recursive call stack tracking</em>
+</p>
 
 ---
 
-## How It Works
+## ✨ Features
 
-1. The user writes Python code in the editor.
-2. When **Run** is clicked:
-
-   * The code is saved to a temporary `.py` file.
-3. A Python tracing script executes the program using `sys.settrace()`.
-4. The tracer captures:
-
-   * current line number
-   * local variables
-   * arrays
-   * recursion stack
-   * console output
-5. Each execution step is converted into JSON.
-6. The C++ Qt visualizer reads the JSON and renders:
-
-   * variables
-   * arrays
-   * graphs
-   * recursion stack
-7. The program execution is replayed step-by-step using animations.
+- **Live Code Execution** — Write Python in the built-in editor and trace every line
+- **Rich Visualizations** — Arrays, graphs, trees, stacks, queues, and variables rendered with premium cyberpunk-inspired graphics
+- **Sorting Animations** — Proportional-height bars with smooth swap/compare animations
+- **Graph Traversal** — Circular node layouts with visited/frontier/path coloring and draggable nodes
+- **Binary Tree Rendering** — Auto-detected tree structures with centered recursive layout
+- **Stack & Queue Views** — Vertical stack and horizontal queue with directional markers
+- **Media Player Controls** — Play, pause, step forward/backward, go-to-step, adjustable speed
+- **Syntax Highlighting** — VS Code Dark+ inspired code editor with active line tracking
+- **AI-Enhanced Mode** — Optional Groq/LLaMA integration for intelligent algorithm classification and theming
+- **Smart Auto-Detection** — Heuristics automatically identify sorting, graph, tree, and recursive algorithms
 
 ---
 
-## Example Visualization
-
-### Array Visualization
+## 🏗️ Architecture
 
 ```
-[5] [3] [1]
+┌─────────────────────────────────────────────────────────┐
+│                    Qt/C++ Frontend                       │
+│  ┌──────────┐  ┌───────────────┐  ┌──────────────────┐  │
+│  │  Code    │  │  ASTVisualizer │  │  Control Panel   │  │
+│  │  Editor  │  │  (Rendering)   │  │  (Playback)      │  │
+│  └──────────┘  └───────┬───────┘  └──────────────────┘  │
+│                        │                                 │
+│              ┌─────────▼─────────┐                       │
+│              │  QGraphicsScene   │                       │
+│              │  Arrays │ Graphs  │                       │
+│              │  Trees  │ Vars    │                       │
+│              └───────────────────┘                       │
+└──────────────────┬──────────────────────────────────────┘
+                   │ QProcess (JSON over stdout)
+        ┌──────────▼──────────┐
+        │  Python Tracer      │
+        │  sys.settrace()     │
+        │  → JSON timeline    │
+        └─────────────────────┘
 ```
 
-### Sorting Visualization
+The app follows a **record-then-play** model:
 
-```
-|       |
-| |     |
-| | |   |
-```
-
-### Recursion Stack
-
-```
-factorial(5)
-factorial(4)
-factorial(3)
-```
+1. **Record** — Python tracer captures every line execution, variable state, and call stack frame
+2. **Transfer** — Execution timeline serialized as JSON and sent to C++ via stdout
+3. **Play** — QTimer-driven playback steps through frames with animated rendering
 
 ---
 
-## Technologies Used
-
-* **C++**
-* **Qt (QGraphicsScene / QGraphicsView)**
-* **Python**
-* **sys.settrace()**
-* **JSON**
-
----
-
-## Project Structure
+## 📁 Project Structure
 
 ```
-AlgorithmVisualization
-│
-├── mainwindow.cpp
-├── ASTVisualizer.cpp
-├── PythonParserEngine.cpp
-├── python_tracer.py
-│
+AlgorithmVisualizaion/
+├── main.cpp                    # Application entry point
+├── mainwindow.cpp / .h         # Main window — UI layout, toolbar, orchestration
+├── ASTVisualizer.cpp / .h      # Core visualization engine (arrays, graphs, trees, variables)
+├── OpenAIClient.cpp / .h       # AI integration via Groq API (LLaMA 3.3 70B)
+├── mainwindow.ui               # Qt Designer form
+├── CMakeLists.txt              # Build configuration (Qt6, C++17)
 ├── Widgets/
-│   └── code_highlighter.cpp
-│
-└── README.md
+│   ├── control_panel.cpp / .h  # Playback controls (play/pause/step/speed)
+│   └── code_highlighter.cpp/.h # Syntax highlighting + line tracking
+└── build/
+    └── .../python_tracer.py    # Python execution tracer (sys.settrace)
 ```
+
+### Key Components
+
+| Component | File | Responsibility |
+|-----------|------|----------------|
+| **MainWindow** | `mainwindow.cpp` | UI shell, process management, signal wiring |
+| **ASTVisualizer** | `ASTVisualizer.cpp` | Parses JSON steps, renders visual items, manages scene |
+| **Python Tracer** | `python_tracer.py` | Hooks into Python interpreter, captures execution timeline |
+| **ControlPanel** | `Widgets/control_panel.cpp` | Media-player-style playback controls |
+| **CodeHighlighter** | `Widgets/code_highlighter.cpp` | VS Code-style syntax highlighting |
+| **OpenAIClient** | `OpenAIClient.cpp` | Optional AI-powered algorithm analysis |
 
 ---
 
-## Installation
+## 🚀 Getting Started
 
-### Requirements
+### Prerequisites
 
-* Qt (Qt Creator recommended)
-* Python 3.x
-* C++17 compatible compiler
+- **Qt 6.9+** with Widgets and Network modules
+- **CMake 3.16+**
+- **C++17** compatible compiler (MinGW, MSVC, GCC, Clang)
+- **Python 3.x** installed and accessible via `python` on PATH
 
-### Steps
+### Build
 
-1. Clone the repository
-
-```
+```bash
+# Clone the repository
 git clone https://github.com/VishwaPriyan-S/AlgorithmVisualization.git
+cd AlgorithmVisualization
+
+# Configure with CMake
+cmake -B build -DCMAKE_PREFIX_PATH=<path-to-qt>
+
+# Build
+cmake --build build
 ```
 
-2. Open the project in **Qt Creator**
+Or open the project directly in **Qt Creator** and build from there.
 
-3. Build the project
+### Run
 
-4. Ensure the Python tracer script is located in the executable directory.
+```bash
+./build/AlgorithmVisualizaion
+```
 
-5. Run the application
-
----
-
-## Usage
-
-1. Write Python code in the editor.
-2. Select visualization mode:
-
-   * Generic
-   * Sorting
-   * Recursion
-   * Graph
-3. Click **Run**.
-4. Watch the execution visualized step-by-step.
+> **Note:** Ensure `python_tracer.py` is accessible. The app searches the application directory, working directory, and parent/build folders automatically.
 
 ---
 
-## Future Improvements
+## 📖 Usage
 
-* Support for more data structures
-* Breakpoints
-* Interactive debugging
-* Additional algorithm visualizations
-* Web version
+### Basic Workflow
+
+1. **Write or paste** a Python algorithm in the left-side code editor
+2. **Select a mode** from the toolbar dropdown (Generic, Sorting, Recursion, Graph) — or leave it on Generic for auto-detection
+3. **Click Run** — the tracer executes your code and records every state
+4. **Watch the visualization** play back automatically, or use the controls to step through manually
+
+### Playback Controls
+
+| Control | Action |
+|---------|--------|
+| ▶ / ⏸ | Play / Pause automatic stepping |
+| ⏹ | Stop execution |
+| ⏩ | Step forward one frame |
+| ⏪ | Step backward one frame |
+| ⏮ | Jump to beginning |
+| ⏭ | Jump to end |
+| Speed Slider | Adjust playback speed (50ms – 2000ms per step) |
+| Step Spinner | Jump to a specific step number |
+
+### Example: Bubble Sort
+
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+
+bubble_sort([64, 34, 25, 12, 22, 11, 90])
+```
+
+<p align="center">
+  <img src="screenshots/sorting_visualization.png" alt="Bubble Sort Visualization" width="85%">
+</p>
+
+### Example: BFS Graph Traversal
+
+```python
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+visited = []
+queue = ['A']
+
+while queue:
+    node = queue.pop(0)
+    if node not in visited:
+        visited.append(node)
+        for neighbor in graph[node]:
+            queue.append(neighbor)
+```
+
+Nodes are arranged in a circular layout with color-coded traversal state (visited = green, frontier = pink, current = hot pink).
+
+### Example: Binary Tree Traversal
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+inorder(root)
+```
+
+<p align="center">
+  <img src="screenshots/tree_visualization.png" alt="Tree Traversal Visualization" width="85%">
+</p>
 
 ---
+
+## 🤖 AI-Enhanced Mode (Optional)
+
+Enable AI-powered visualization by clicking **AI Settings** in the toolbar and providing a [Groq API key](https://console.groq.com/).
+
+When enabled, the AI:
+- **Classifies** the algorithm type (sorting, graph, tree, recursion, DP, etc.)
+- **Maps pointer roles** (e.g., identifies that `lo` is a "left boundary" pointer)
+- **Suggests themes** with curated color palettes
+- **Recommends visual metaphors** for the best rendering approach
+
+The app works fully without AI — heuristic-based auto-detection handles most algorithms.
+
+---
+
+## 🎨 Visual Design
+
+The app uses a **VS Code Dark+** inspired theme with cyberpunk accents:
+
+| Element | Color | Hex |
+|---------|-------|-----|
+| Background | Dark charcoal | `#1e1e1e` |
+| Scene background | Deep navy | `#0d1117` |
+| Primary accent | Neon cyan | `#00d4ff` |
+| Highlight / Active | Hot pink | `#ff79c6` |
+| Sorted / Visited | Neon green | `#50fa7b` |
+| Compare indices | Neon yellow | `#f1fa8c` |
+| Path / Depth | Neon purple | `#bd93f9` |
+| Status bar | VS Code blue | `#007acc` |
+
+Visual items feature:
+- **4-stop cyberpunk gradients** on bars
+- **Radial gradients** on graph/tree nodes
+- **Neon glow borders** and drop shadows
+- **Smooth `QPropertyAnimation`** transitions with `OutCubic` easing
+
+---
+
+## 🛠️ Technical Details
+
+- **Build System:** CMake with `qt_add_executable`
+- **Qt Modules:** Widgets (UI), Network (AI API calls)
+- **C++ Standard:** C++17
+- **Python Integration:** `QProcess` spawning isolated Python interpreter
+- **Rendering:** `QGraphicsScene` / `QGraphicsView` with antialiasing
+- **Animations:** `QPropertyAnimation` + `QParallelAnimationGroup`
+
+---
+
+## 📄 License
+
+This project is open source. See the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  Built with ❤️ using Qt and Python
+</p>
