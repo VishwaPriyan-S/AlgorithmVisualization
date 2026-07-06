@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Qt-6.9-41CD52?logo=qt&logoColor=white" alt="Qt 6.9">
   <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white" alt="C++17">
   <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python 3">
-  <img src="https://img.shields.io/badge/AI-Groq%20%2F%20LLaMA-FF6B35" alt="AI Enhanced">
+
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
 </p>
 
@@ -42,7 +42,7 @@
 - **Stack & Queue Views** — Vertical stack and horizontal queue with directional markers
 - **Media Player Controls** — Play, pause, step forward/backward, go-to-step, adjustable speed
 - **Syntax Highlighting** — VS Code Dark+ inspired code editor with active line tracking
-- **AI-Enhanced Mode** — Optional Groq/LLaMA integration for intelligent algorithm classification and theming
+
 - **Smart Auto-Detection** — Heuristics automatically identify sorting, graph, tree, and recursive algorithms
 
 ---
@@ -86,7 +86,6 @@ AlgorithmVisualizaion/
 ├── main.cpp                    # Application entry point
 ├── mainwindow.cpp / .h         # Main window — UI layout, toolbar, orchestration
 ├── ASTVisualizer.cpp / .h      # Core visualization engine (arrays, graphs, trees, variables)
-├── OpenAIClient.cpp / .h       # AI integration via Groq API (LLaMA 3.3 70B)
 ├── mainwindow.ui               # Qt Designer form
 ├── CMakeLists.txt              # Build configuration (Qt6, C++17)
 ├── Widgets/
@@ -105,7 +104,6 @@ AlgorithmVisualizaion/
 | **Python Tracer** | `python_tracer.py` | Hooks into Python interpreter, captures execution timeline |
 | **ControlPanel** | `Widgets/control_panel.cpp` | Media-player-style playback controls |
 | **CodeHighlighter** | `Widgets/code_highlighter.cpp` | VS Code-style syntax highlighting |
-| **OpenAIClient** | `OpenAIClient.cpp` | Optional AI-powered algorithm analysis |
 
 ---
 
@@ -242,20 +240,6 @@ inorder(root)
 
 ---
 
-## 🤖 AI-Enhanced Mode (Optional)
-
-Enable AI-powered visualization by clicking **AI Settings** in the toolbar and providing a [Groq API key](https://console.groq.com/).
-
-When enabled, the AI:
-- **Classifies** the algorithm type (sorting, graph, tree, recursion, DP, etc.)
-- **Maps pointer roles** (e.g., identifies that `lo` is a "left boundary" pointer)
-- **Suggests themes** with curated color palettes
-- **Recommends visual metaphors** for the best rendering approach
-
-The app works fully without AI — heuristic-based auto-detection handles most algorithms.
-
----
-
 ## 🎨 Visual Design
 
 The app uses a **VS Code Dark+** inspired theme with cyberpunk accents:
@@ -282,7 +266,7 @@ Visual items feature:
 ## 🛠️ Technical Details
 
 - **Build System:** CMake with `qt_add_executable`
-- **Qt Modules:** Widgets (UI), Network (AI API calls)
+- **Qt Modules:** Widgets (UI), Network
 - **C++ Standard:** C++17
 - **Python Integration:** `QProcess` spawning isolated Python interpreter
 - **Rendering:** `QGraphicsScene` / `QGraphicsView` with antialiasing
